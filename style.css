@@ -1,0 +1,401 @@
+```css
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: Inter, Arial, sans-serif;
+
+    background: #080b10;
+    color: #eef2f7;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    padding: 30px 15px 50px;
+
+    background:
+        radial-gradient(
+            circle at 50% -10%,
+            #1a2533 0,
+            #080b10 50%
+        );
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.container {
+    width: min(900px, 100%);
+    margin: auto;
+}
+
+
+/* HEADER */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 22px;
+}
+
+.small-title,
+.label {
+    color: #7f8b9b;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: .14em;
+}
+
+h1 {
+    margin: 5px 0;
+
+    font-size: 40px;
+}
+
+.subtitle {
+    margin: 0;
+
+    color: #8995a6;
+}
+
+.buttons {
+    display: flex;
+    gap: 8px;
+}
+
+
+/* BUTTON */
+
+.primary,
+.secondary {
+    border-radius: 12px;
+
+    padding: 11px 17px;
+
+    font-weight: 750;
+
+    transition: .15s;
+}
+
+.primary {
+    background: #d8ff3f;
+    color: #101500;
+
+    border: none;
+}
+
+.primary:hover {
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+.secondary {
+    background: #151b24;
+    color: #dce3ec;
+
+    border: 1px solid #26303d;
+}
+
+.secondary:hover {
+    background: #1d2632;
+}
+
+
+/* STATS */
+
+.stats {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 10px;
+
+    margin-bottom: 14px;
+}
+
+.stat {
+    background: #10151d;
+
+    border: 1px solid #1e2732;
+
+    border-radius: 14px;
+
+    padding: 14px 16px;
+}
+
+.stat span {
+    display: block;
+
+    color: #7f8b9b;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+.stat strong {
+    font-size: 26px;
+}
+
+
+/* CARD */
+
+.card {
+    background: rgba(15, 20, 27, .95);
+
+    border: 1px solid #222c38;
+
+    border-radius: 20px;
+
+    padding: 28px;
+
+    margin-bottom: 14px;
+
+    box-shadow:
+        0 14px 40px rgba(0,0,0,.2);
+}
+
+
+/* GAME */
+
+.prompt {
+    min-height: 45px;
+
+    margin: 12px 0 22px;
+
+    font-size: 34px;
+    font-weight: 800;
+}
+
+input {
+    width: 100%;
+
+    padding: 15px 16px;
+
+    margin-bottom: 10px;
+
+    border-radius: 13px;
+
+    border: 1px solid #2c3745;
+
+    background: #090d12;
+
+    color: white;
+
+    outline: none;
+
+    font-size: 18px;
+}
+
+input:focus {
+    border-color: #8da52c;
+
+    box-shadow:
+        0 0 0 3px rgba(216,255,63,.08);
+}
+
+#submitBtn {
+    width: 100%;
+
+    font-size: 16px;
+}
+
+.feedback {
+    min-height: 26px;
+
+    margin-top: 13px;
+
+    font-weight: 750;
+}
+
+.feedback.ok {
+    color: #cfff47;
+}
+
+.feedback.bad {
+    color: #ff8d8d;
+}
+
+.hint {
+    color: #697586;
+
+    font-size: 12px;
+
+    margin-top: 8px;
+}
+
+
+/* GAME OVER */
+
+.game-over {
+    text-align: center;
+}
+
+.over-icon {
+    width: 55px;
+    height: 55px;
+
+    margin: auto;
+
+    border-radius: 50%;
+
+    background: #27171a;
+
+    color: #ff7e7e;
+
+    font-size: 40px;
+    line-height: 50px;
+}
+
+.game-over h2 {
+    margin: 10px 0;
+
+    font-size: 28px;
+}
+
+.game-over p {
+    color: #8995a6;
+}
+
+.over-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin-top: 20px;
+}
+
+
+/* WRONG WORDS */
+
+.panel-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.panel-header h2 {
+    margin-top: 5px;
+}
+
+.wrong-item {
+    border-top: 1px solid #222c38;
+
+    padding: 15px 0;
+}
+
+.wrong-item:first-child {
+    border-top: none;
+}
+
+.wrong-vi {
+    font-weight: 800;
+
+    margin-bottom: 5px;
+}
+
+.wrong-en {
+    color: #98a5b6;
+
+    font-size: 14px;
+}
+
+.wrong-your {
+    color: #ff9b9b;
+
+    font-size: 14px;
+
+    margin-top: 4px;
+}
+
+.full {
+    width: 100%;
+
+    margin-top: 14px;
+}
+
+
+/* RULES */
+
+.rules {
+    color: #a8b3c1;
+}
+
+.rules h2 {
+    color: #eef2f7;
+}
+
+.rules li {
+    margin: 8px 0;
+}
+
+
+/* HIDDEN */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 18px 12px;
+    }
+
+    header {
+        flex-direction: column;
+    }
+
+    .buttons {
+        width: 100%;
+    }
+
+    .buttons button {
+        flex: 1;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    .stats {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .prompt {
+        font-size: 28px;
+    }
+
+    .over-buttons {
+        flex-direction: column;
+    }
+
+}
+```
