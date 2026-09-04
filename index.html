@@ -1,348 +1,267 @@
-```html
 <!DOCTYPE html>
+
 <html lang="vi">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+```
+<title>Vocabulary Streak</title>
 
-    <title>Vocabulary Streak</title>
+<link rel="stylesheet" href="style.css">
+```
 
-    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-    <div class="container">
-
-        <!-- HEADER -->
-
-        <header class="header">
-
-            <div>
-                <div class="logo">
-                    VOCAB STREAK
-                </div>
-
-                <h1>
-                    Việt → Anh
-                </h1>
-
-                <p class="subtitle">
-                    Nhập đầy đủ tất cả nghĩa của từ.
-                </p>
-            </div>
-
-
-            <div class="header-buttons">
-
-                <button
-                    id="restartBtn"
-                    class="secondary"
-                >
-                    Chơi lại
-                </button>
-
-                <button
-                    id="wrongBtn"
-                    class="secondary"
-                >
-                    Từ sai
-                    <span id="wrongCount">0</span>
-                </button>
-
-            </div>
-
-        </header>
-
-
-
-        <!-- STATS -->
-
-        <div class="stats">
-
-            <div class="stat-box">
-                <span>🔥 Chuỗi</span>
-                <strong id="streak">0</strong>
-            </div>
-
-            <div class="stat-box">
-                <span>✓ Đúng</span>
-                <strong id="correct">0</strong>
-            </div>
-
-            <div class="stat-box">
-                <span>📚 Còn lại</span>
-                <strong id="remaining">0</strong>
-            </div>
-
-            <div class="stat-box">
-                <span>📖 Tổng từ</span>
-                <strong id="total">0</strong>
-            </div>
-
-        </div>
-
-
-
-        <!-- GAME -->
-
-        <main
-            id="gameCard"
-            class="card game-card"
-        >
-
-            <div class="question-label">
-                DỊCH SANG TIẾNG ANH
-            </div>
-
-
-            <div
-                id="prompt"
-                class="prompt"
-            >
-                ...
-            </div>
-
-
-            <div class="input-label">
-                Đáp án của bạn
-            </div>
-
-
-            <input
-                id="answer"
-                type="text"
-                autocomplete="off"
-                spellcheck="false"
-                placeholder="abc = abc = abc"
-            >
-
-
-            <button
-                id="submitBtn"
-                class="primary"
-            >
-                Trả lời
-                <span>↵</span>
-            </button>
-
-
-            <div
-                id="feedback"
-                class="feedback"
-            ></div>
-
-
-            <div class="hint">
-
-                Nếu có nhiều nghĩa, nhập đủ tất cả
-                theo dạng:
-
-                <code>
-                    abc = abc = abc
-                </code>
-
-                <br>
-
-                Không phân biệt hoa/thường và thứ tự.
-
-            </div>
-
-        </main>
-
-
-
-        <!-- GAME OVER -->
-
-        <section
-            id="gameOver"
-            class="card game-over hidden"
-        >
-
-            <div class="game-over-icon">
-                ×
-            </div>
-
-
-            <div class="question-label">
-                CHUỖI KẾT THÚC
-            </div>
-
-
-            <h2>
-                Chuỗi:
-                <span id="finalStreak">
-                    0
-                </span>
-            </h2>
-
-
-            <p id="overText">
-                ...
-            </p>
-
-
-            <div class="game-over-buttons">
-
-                <button
-                    id="againBtn"
-                    class="primary"
-                >
-                    Chơi lại
-                </button>
-
-
-                <button
-                    id="reviewBtn"
-                    class="secondary"
-                >
-                    Làm lại từ sai
-                </button>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- WRONG WORDS -->
-
-        <section
-            id="wrongPanel"
-            class="card wrong-panel hidden"
-        >
-
-            <div class="panel-top">
-
-                <div>
-
-                    <div class="question-label">
-                        ÔN TẬP
-                    </div>
-
-                    <h2>
-                        Danh sách từ sai
-                    </h2>
-
-                </div>
-
-
-                <button
-                    id="closeWrongBtn"
-                    class="secondary"
-                >
-                    Đóng
-                </button>
-
-            </div>
-
-
-            <div id="wrongList"></div>
-
-
-            <button
-                id="retryWrongBtn"
-                class="primary full"
-            >
-                Làm lại tất cả từ sai
-            </button>
-
-        </section>
-
-
-
-        <!-- RULES -->
-
-        <section class="card rules">
-
-            <h2>
-                Luật chơi
-            </h2>
-
-
-            <div class="rule">
-
-                <span>1</span>
-
-                <p>
-                    Web hiện nghĩa tiếng Việt.
-                </p>
-
-            </div>
-
-
-            <div class="rule">
-
-                <span>2</span>
-
-                <p>
-                    Bạn nhập nghĩa tiếng Anh.
-                </p>
-
-            </div>
-
-
-            <div class="rule">
-
-                <span>3</span>
-
-                <p>
-                    Có nhiều nghĩa → phải nhập
-                    <strong>đủ tất cả</strong>.
-                </p>
-
-            </div>
-
-
-            <div class="rule">
-
-                <span>4</span>
-
-                <p>
-                    Dùng dấu
-                    <strong>=</strong>
-                    để ngăn cách.
-                </p>
-
-            </div>
-
-
-            <div class="rule">
-
-                <span>5</span>
-
-                <p>
-                    Đúng → chuỗi +1.
-                </p>
-
-            </div>
-
-
-            <div class="rule">
-
-                <span>6</span>
-
-                <p>
-                    Sai → chuỗi kết thúc.
-                </p>
-
-            </div>
-
-        </section>
+<div class="container">
+
+```
+<!-- HEADER -->
+<header class="header">
+
+    <div>
+        <div class="logo">VOCAB STREAK</div>
+
+        <h1>Việt → Anh</h1>
+
+        <p class="subtitle">
+            Nhập đầy đủ tất cả nghĩa của từ.
+        </p>
+    </div>
+
+    <div class="header-buttons">
+
+        <button
+            type="button"
+            id="restartBtn"
+            class="secondary">
+            Chơi lại
+        </button>
+
+        <button
+            type="button"
+            id="wrongBtn"
+            class="secondary">
+            Từ sai
+            <span id="wrongCount">0</span>
+        </button>
 
     </div>
 
+</header>
 
 
-    <script src="script.js"></script>
+<!-- STATS -->
+<div class="stats">
+
+    <div class="stat-box">
+        <span>🔥 Chuỗi</span>
+        <strong id="streak">0</strong>
+    </div>
+
+    <div class="stat-box">
+        <span>✓ Đúng</span>
+        <strong id="correct">0</strong>
+    </div>
+
+    <div class="stat-box">
+        <span>📚 Còn lại</span>
+        <strong id="remaining">0</strong>
+    </div>
+
+    <div class="stat-box">
+        <span>📖 Tổng từ</span>
+        <strong id="total">0</strong>
+    </div>
+
+</div>
+
+
+<!-- GAME -->
+<main
+    id="gameCard"
+    class="card game-card">
+
+    <div class="question-label">
+        DỊCH SANG TIẾNG ANH
+    </div>
+
+    <div
+        id="prompt"
+        class="prompt">
+        ...
+    </div>
+
+    <div class="input-label">
+        Đáp án của bạn
+    </div>
+
+    <input
+        id="answer"
+        type="text"
+        autocomplete="off"
+        autocapitalize="off"
+        spellcheck="false"
+        placeholder="abc = abc = abc"
+    >
+
+    <button
+        type="button"
+        id="submitBtn"
+        class="primary">
+        Trả lời
+        <span>↵</span>
+    </button>
+
+    <div
+        id="feedback"
+        class="feedback">
+    </div>
+
+    <div class="hint">
+        Nếu có nhiều nghĩa, nhập đủ tất cả theo dạng:
+
+        <code>abc = abc = abc</code>
+
+        <br>
+
+        Không phân biệt hoa/thường và thứ tự.
+    </div>
+
+</main>
+
+
+<!-- GAME OVER -->
+<section
+    id="gameOver"
+    class="card game-over hidden">
+
+    <div class="game-over-icon">
+        ×
+    </div>
+
+    <div class="question-label">
+        CHUỖI KẾT THÚC
+    </div>
+
+    <h2>
+        Chuỗi:
+        <span id="finalStreak">0</span>
+    </h2>
+
+    <p id="overText">
+        ...
+    </p>
+
+    <div class="game-over-buttons">
+
+        <button
+            type="button"
+            id="againBtn"
+            class="primary">
+            Chơi lại
+        </button>
+
+        <button
+            type="button"
+            id="reviewBtn"
+            class="secondary">
+            Làm lại từ sai
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- WRONG WORDS -->
+<section
+    id="wrongPanel"
+    class="card wrong-panel hidden">
+
+    <div class="panel-top">
+
+        <div>
+            <div class="question-label">
+                ÔN TẬP
+            </div>
+
+            <h2>
+                Danh sách từ sai
+            </h2>
+        </div>
+
+        <button
+            type="button"
+            id="closeWrongBtn"
+            class="secondary">
+            Đóng
+        </button>
+
+    </div>
+
+    <div id="wrongList"></div>
+
+    <button
+        type="button"
+        id="retryWrongBtn"
+        class="primary full">
+        Làm lại tất cả từ sai
+    </button>
+
+</section>
+
+
+<!-- RULES -->
+<section class="card rules">
+
+    <h2>Luật chơi</h2>
+
+    <div class="rule">
+        <span>1</span>
+        <p>Web hiện nghĩa tiếng Việt.</p>
+    </div>
+
+    <div class="rule">
+        <span>2</span>
+        <p>Bạn nhập nghĩa tiếng Anh.</p>
+    </div>
+
+    <div class="rule">
+        <span>3</span>
+        <p>
+            Có nhiều nghĩa → phải nhập
+            <strong>đủ tất cả</strong>.
+        </p>
+    </div>
+
+    <div class="rule">
+        <span>4</span>
+        <p>
+            Dùng dấu <strong>=</strong>
+            để ngăn cách.
+        </p>
+    </div>
+
+    <div class="rule">
+        <span>5</span>
+        <p>Đúng → chuỗi +1.</p>
+    </div>
+
+    <div class="rule">
+        <span>6</span>
+        <p>Sai → chuỗi kết thúc.</p>
+    </div>
+
+</section>
+```
+
+</div>
+
+<script src="script.js"></script>
 
 </body>
-
 </html>
-```
