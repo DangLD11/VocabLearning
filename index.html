@@ -1,0 +1,205 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vocabulary Streak</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <div>
+            <p class="small-title">VOCABULARY TRAINER</p>
+            <h1>Việt → Anh</h1>
+            <p class="subtitle">
+                Trả lời liên tục. Sai một câu là chuỗi kết thúc.
+            </p>
+        </div>
+
+        <div class="buttons">
+            <button id="restartBtn" class="secondary">
+                Chơi lại
+            </button>
+
+            <button id="wrongBtn" class="secondary">
+                Từ sai <span id="wrongCount">0</span>
+            </button>
+        </div>
+    </header>
+
+
+    <!-- THỐNG KÊ -->
+
+    <section class="stats">
+
+        <div class="stat">
+            <span>Chuỗi</span>
+            <strong id="streak">0</strong>
+        </div>
+
+        <div class="stat">
+            <span>Đúng</span>
+            <strong id="correct">0</strong>
+        </div>
+
+        <div class="stat">
+            <span>Còn lại</span>
+            <strong id="remaining">0</strong>
+        </div>
+
+        <div class="stat">
+            <span>Tổng từ</span>
+            <strong id="total">0</strong>
+        </div>
+
+    </section>
+
+
+    <!-- GAME -->
+
+    <section id="gameCard" class="card">
+
+        <p class="label">
+            DỊCH SANG TIẾNG ANH
+        </p>
+
+        <div id="prompt" class="prompt">
+            ...
+        </div>
+
+        <input
+            id="answer"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="Nhập đáp án tiếng Anh..."
+        >
+
+        <button id="submitBtn" class="primary">
+            Trả lời ↵
+        </button>
+
+        <div id="feedback" class="feedback"></div>
+
+        <p class="hint">
+            Không phân biệt hoa/thường.
+            Nhiều đáp án đồng nghĩa đều được chấp nhận.
+        </p>
+
+    </section>
+
+
+    <!-- GAME OVER -->
+
+    <section id="gameOver" class="card game-over hidden">
+
+        <div class="over-icon">
+            ×
+        </div>
+
+        <p class="label">
+            CHUỖI KẾT THÚC
+        </p>
+
+        <h2>
+            Chuỗi của bạn:
+            <span id="finalStreak">0</span>
+        </h2>
+
+        <p id="overText"></p>
+
+        <div class="over-buttons">
+
+            <button id="againBtn" class="primary">
+                Chơi lại
+            </button>
+
+            <button id="reviewBtn" class="secondary">
+                Làm lại từ sai
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- DANH SÁCH TỪ SAI -->
+
+    <section id="wrongPanel" class="card hidden">
+
+        <div class="panel-header">
+
+            <div>
+                <p class="label">
+                    ÔN LẠI
+                </p>
+
+                <h2>
+                    Danh sách từ sai
+                </h2>
+            </div>
+
+            <button id="closeWrongBtn" class="secondary">
+                Đóng
+            </button>
+
+        </div>
+
+        <div id="wrongList"></div>
+
+        <button id="retryWrongBtn" class="primary full">
+            Làm lại tất cả từ sai
+        </button>
+
+    </section>
+
+
+    <!-- LUẬT -->
+
+    <section class="card rules">
+
+        <h2>Luật chơi</h2>
+
+        <ul>
+            <li>
+                Web hiện nghĩa tiếng Việt.
+            </li>
+
+            <li>
+                Bạn nhập từ/cụm từ tiếng Anh.
+            </li>
+
+            <li>
+                Đúng → chuỗi +1.
+            </li>
+
+            <li>
+                Sai → chuỗi kết thúc.
+            </li>
+
+            <li>
+                Từ sai được lưu lại.
+            </li>
+
+            <li>
+                Có thể làm lại toàn bộ các từ đã sai.
+            </li>
+        </ul>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
+```
