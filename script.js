@@ -3,146 +3,81 @@
 /* =========================================================
    VOCAB STREAK
    Việt → Anh
-   Nhập đầy đủ tất cả đáp án, ngăn cách bằng dấu =
-   Ví dụ:
-   tài sản
-   → possession = property = valuable = asset
-
-   Không phân biệt:
-   - Hoa / thường
-   - Thứ tự đáp án
-
-   Có:
-   - Chuỗi vô hạn
-   - Lưu từ sai
-   - Làm lại tất cả từ sai
-   - Tự xóa từ khỏi danh sách sai khi làm đúng
-   - Lưu bằng localStorage
+   260 mục có đánh số
    ========================================================= */
 
 
 /* =========================================================
    DANH SÁCH TỪ VỰNG
+   id = số thứ tự trong danh sách gốc
+   vi = nghĩa tiếng Việt
+   en = toàn bộ đáp án tiếng Anh
    ========================================================= */
 
 const vocabulary = [
 
-    {
-        vi: "đột nhập",
-        en: ["break into"]
-    },
+    // 1
+    { id: 1, vi: "đột nhập", en: ["break into"] },
 
-    {
-        vi: "không còn nữa",
-        en: ["no longer", "not anymore"]
-    },
+    // 2
+    { id: 2, vi: "không còn nữa", en: ["no longer", "not anymore"] },
 
-    {
-        vi: "tài sản",
-        en: ["possession", "property", "valuable", "asset"]
-    },
+    // 3
+    { id: 3, vi: "tài sản", en: ["possession", "property", "valuable", "asset"] },
 
-    {
-        vi: "gặp gỡ",
-        en: ["meet up with"]
-    },
+    // 4
+    { id: 4, vi: "gặp gỡ", en: ["meet up with"] },
 
-    {
-        vi: "giữ liên lạc",
-        en: ["keep in touch"]
-    },
+    // 5
+    { id: 5, vi: "giữ liên lạc", en: ["keep in touch"] },
 
-    {
-        vi: "theo dõi",
-        en: ["keep an eye on", "keep track of"]
-    },
+    // 6
+    { id: 6, vi: "theo dõi", en: ["keep an eye on", "keep track of"] },
 
-    {
-        vi: "phần lớn",
-        en: ["majority", "most"]
-    },
+    // 7
+    { id: 7, vi: "phần lớn", en: ["majority", "most"] },
 
-    {
-        vi: "có khả năng xảy ra",
-        en: ["probable"]
-    },
+    // 8
+    { id: 8, vi: "có khả năng xảy ra", en: ["probable"] },
+    { id: 8, vi: "có lẽ", en: ["probably"] },
 
-    {
-        vi: "có lẽ",
-        en: ["probably"]
-    },
+    // 9
+    { id: 9, vi: "làm hài lòng", en: ["satisfy"] },
+    { id: 9, vi: "hài lòng (cho người)", en: ["satisfied"] },
+    { id: 9, vi: "hài lòng (cho vật)", en: ["satisfactory"] },
+    { id: 9, vi: "sự hài lòng", en: ["satisfaction"] },
 
-    {
-        vi: "làm hài lòng",
-        en: ["satisfy"]
-    },
+    // 10
+    { id: 10, vi: "kẹt xe", en: ["traffic jam", "traffic congestion", "gridlocked"] },
 
-    {
-        vi: "hài lòng (cho người)",
-        en: ["satisfied"]
-    },
+    // 11
+    { id: 11, vi: "tuyển dụng", en: ["recruit", "take on", "employ"] },
 
-    {
-        vi: "hài lòng (cho vật)",
-        en: ["satisfactory"]
-    },
+    // 12
+    { id: 12, vi: "biến mất", en: ["disappear", "vanish", "extinct", "dwindle"] },
 
-    {
-        vi: "sự hài lòng",
-        en: ["satisfaction"]
-    },
+    // 13
+    { id: 13, vi: "dừng lại", en: ["cease", "stop", "halt"] },
 
-    {
-        vi: "kẹt xe",
-        en: ["traffic jam", "traffic congestion", "gridlocked"]
-    },
+    // 14
+    { id: 14, vi: "xâm lược", en: ["invasion", "invade"] },
 
-    {
-        vi: "tuyển dụng",
-        en: ["recruit", "take on", "employ"]
-    },
+    // 15
+    { id: 15, vi: "chiến lược", en: ["strategy", "scheme", "approach"] },
 
-    {
-        vi: "biến mất",
-        en: ["disappear", "vanish", "extinct", "dwindle"]
-    },
+    // 16
+    { id: 16, vi: "mục tiêu", en: ["objective"] },
 
-    {
-        vi: "dừng lại",
-        en: ["cease", "stop", "halt"]
-    },
+    // 17
+    { id: 17, vi: "khách quan", en: ["objective"] },
+    { id: 17, vi: "chủ quan", en: ["subjective"] },
 
-    {
-        vi: "xâm lược",
-        en: ["invasion", "invade"]
-    },
+    // 18
+    { id: 18, vi: "trước khi", en: ["prior to", "before", "in advance"] },
 
+    // 19
     {
-        vi: "chiến lược",
-        en: ["strategy", "scheme", "approach"]
-    },
-
-    {
-        vi: "mục tiêu",
-        en: ["objective"]
-    },
-
-    {
-        vi: "khách quan",
-        en: ["objective"]
-    },
-
-    {
-        vi: "chủ quan",
-        en: ["subjective"]
-    },
-
-    {
-        vi: "trước khi",
-        en: ["prior to", "before", "in advance"]
-    },
-
-    {
+        id: 19,
         vi: "chịu trách nhiệm cho",
         en: [
             "in charge of",
@@ -153,187 +88,116 @@ const vocabulary = [
         ]
     },
 
-    {
-        vi: "khó chịu",
-        en: ["offensive", "unpleasant"]
-    },
+    // 20
+    { id: 20, vi: "khó chịu", en: ["offensive", "unpleasant"] },
 
-    {
-        vi: "đáng ngạc nhiên",
-        en: ["incredible"]
-    },
+    // 21
+    { id: 21, vi: "đáng ngạc nhiên", en: ["incredible"] },
 
-    {
-        vi: "học thuyết",
-        en: ["theory"]
-    },
+    // 22
+    { id: 22, vi: "học thuyết", en: ["theory"] },
 
-    {
-        vi: "kỳ lạ",
-        en: ["bizarre"]
-    },
+    // 23
+    { id: 23, vi: "kỳ lạ", en: ["bizarre"] },
 
-    {
-        vi: "chẳng ích gì",
-        en: ["there is no point in"]
-    },
+    // 24
+    { id: 24, vi: "chẳng ích gì", en: ["there is no point in"] },
 
-    {
-        vi: "nói lầm bầm",
-        en: ["mumble"]
-    },
+    // 25
+    { id: 25, vi: "nói lầm bầm", en: ["mumble"] },
 
+    // 26
     {
+        id: 26,
         vi: "bắt kịp với",
         en: ["catch up with", "keep up with", "keep pace with"]
     },
 
-    {
-        vi: "hướng về phía nào",
-        en: ["make for"]
-    },
+    // 27
+    { id: 27, vi: "hướng về phía nào", en: ["make for"] },
 
-    {
-        vi: "tấp xe vào lề",
-        en: ["pull in"]
-    },
+    // 28
+    { id: 28, vi: "tấp xe vào lề", en: ["pull in"] },
 
-    {
-        vi: "xe cán, tông xe",
-        en: ["run over"]
-    },
+    // 29
+    { id: 29, vi: "xe cán, tông xe", en: ["run over"] },
 
-    {
-        vi: "đưa tiễn ai đó",
-        en: ["see someone off"]
-    },
+    // 30
+    { id: 30, vi: "đưa tiễn ai đó", en: ["see so off"] },
 
-    {
-        vi: "khởi hành",
-        en: ["set out", "set off"]
-    },
+    // 31
+    { id: 31, vi: "khởi hành", en: ["set out", "set off"] },
 
-    {
-        vi: "đón ai",
-        en: ["pick someone up"]
-    },
+    // 32
+    { id: 32, vi: "đón ai", en: ["pick so up"] },
+    { id: 32, vi: "thả ai xuống", en: ["drop so off"] },
 
+    // 33
     {
-        vi: "thả ai xuống",
-        en: ["drop someone off"]
-    },
-
-    {
+        id: 33,
         vi: "nói ra mà không suy nghĩ",
-        en: ["off the top of someone's head"]
+        en: ["off the top of so's head"]
     },
 
+    // 34
+    { id: 34, vi: "yêu sâu đắm", en: ["head over heels"] },
+
+    // 35
+    { id: 35, vi: "rộng", en: ["broad"] },
+    { id: 35, vi: "chiều rộng", en: ["breadth"] },
+
+    // 36
+    { id: 36, vi: "mở rộng", en: ["broaden"] },
+
+    // 37
+    { id: 37, vi: "cư trú", en: ["inhabit"] },
+    { id: 37, vi: "cư dân", en: ["inhabitant"] },
+    { id: 37, vi: "(không) có thể sống", en: ["uninhabitable", "inhabitable"] },
+
+    // 38
+    { id: 38, vi: "nhận ra, công nhận", en: ["recognize"] },
+    { id: 38, vi: "sự công nhận", en: ["recognition"] },
+
+    // 39
     {
-        vi: "yêu sâu đắm",
-        en: ["head over heels"]
+        id: 39,
+        vi: "(không) có thể nhận ra",
+        en: ["unrecognizable", "recognizable"]
     },
 
-    {
-        vi: "rộng",
-        en: ["broad"]
-    },
+    // 40
+    { id: 40, vi: "thế giới", en: ["world"] },
+    { id: 40, vi: "toàn thế giới", en: ["worldwide"] },
 
-    {
-        vi: "chiều rộng",
-        en: ["breadth"]
-    },
+    // 41
+    { id: 41, vi: "tiết lộ bí mật", en: ["let the cat out of the bag"] },
 
-    {
-        vi: "mở rộng",
-        en: ["broaden"]
-    },
+    // 42
+    { id: 42, vi: "kết thúc công việc", en: ["call it a day"] },
 
-    {
-        vi: "cư trú",
-        en: ["inhabit"]
-    },
+    // 43
+    { id: 43, vi: "kịp lúc", en: ["in the nick of time"] },
 
-    {
-        vi: "cư dân",
-        en: ["inhabitant"]
-    },
+    // 44
+    { id: 44, vi: "hào hứng", en: ["thrill"] },
 
+    // 45
     {
-        vi: "không thể sống",
-        en: ["uninhabitable"]
-    },
-
-    {
-        vi: "có thể sống",
-        en: ["inhabitable"]
-    },
-
-    {
-        vi: "nhận ra, công nhận",
-        en: ["recognize"]
-    },
-
-    {
-        vi: "sự công nhận",
-        en: ["recognition"]
-    },
-
-    {
-        vi: "không thể nhận ra",
-        en: ["unrecognizable"]
-    },
-
-    {
-        vi: "có thể nhận ra",
-        en: ["recognizable"]
-    },
-
-    {
-        vi: "thế giới",
-        en: ["world"]
-    },
-
-    {
-        vi: "toàn thế giới",
-        en: ["worldwide"]
-    },
-
-    {
-        vi: "tiết lộ bí mật",
-        en: ["let the cat out of the bag"]
-    },
-
-    {
-        vi: "kết thúc công việc",
-        en: ["call it a day"]
-    },
-
-    {
-        vi: "kịp lúc",
-        en: ["in the nick of time"]
-    },
-
-    {
-        vi: "hào hứng",
-        en: ["thrill"]
-    },
-
-    {
+        id: 45,
         vi: "vấn đề nhạy cảm (không dám nói)",
         en: ["the elephant in the room"]
     },
 
+    // 46
     {
+        id: 46,
         vi: "trở ngại",
-        en: [
-            "hurdle",
-            "impediment",
-            "obstacle",
-            "stumbling block"
-        ]
+        en: ["hurdle", "impediment", "obstacle", "stumbling block"]
     },
 
+    // 47
     {
+        id: 47,
         vi: "thỉnh thoảng",
         en: [
             "once in a blue moon",
@@ -344,151 +208,124 @@ const vocabulary = [
         ]
     },
 
+    // 48
     {
+        id: 48,
         vi: "đừng than vãn những thứ không thay đổi được",
         en: ["don't cry over spilled milk", "don't cry over spilt milk"]
     },
 
+    // 49
     {
+        id: 49,
         vi: "rất vui mừng, hạnh phúc",
         en: ["over the moon", "on cloud nine", "very happy"]
     },
 
-    {
-        vi: "không khỏe",
-        en: ["under the weather"]
-    },
+    // 50
+    { id: 50, vi: "không khỏe", en: ["under the weather"] },
 
+    // 51
     {
+        id: 51,
         vi: "cố gắng, nỗ lực",
-        en: [
-            "have a go",
-            "make an attempt to",
-            "in an effort to"
-        ]
+        en: ["have a go", "make an attempt to v", "in an effort to v"]
     },
 
-    {
-        vi: "liên quan",
-        en: ["relevant"]
-    },
+    // 52
+    { id: 52, vi: "liên quan", en: ["relevant"] },
 
-    {
-        vi: "hạn chế",
-        en: ["curb"]
-    },
+    // 53
+    { id: 53, vi: "hạn chế", en: ["curb"] },
 
+    // 54
     {
+        id: 54,
         vi: "đắt tiền",
-        en: [
-            "cost an arm and a leg",
-            "pay through the nose"
-        ]
+        en: ["cost an arm and a leg", "pay through the nose"]
     },
 
+    // 55
     {
+        id: 55,
         vi: "ôn lại kiến thức",
         en: ["brush up on", "revise"]
     },
 
+    // 56
     {
+        id: 56,
         vi: "mất điện",
-        en: [
-            "a power cut",
-            "blackout",
-            "a power outage"
-        ]
+        en: ["a power cut", "blackout", "a power outage"]
     },
 
-    {
-        vi: "bắt đầu làm việc gì",
-        en: ["get round to"]
-    },
+    // 57
+    { id: 57, vi: "bắt đầu làm việc gì", en: ["get round to ving"] },
 
-    {
-        vi: "dừng tham gia hoạt động",
-        en: ["pull out"]
-    },
+    // 58
+    { id: 58, vi: "dừng tham gia hoạt động", en: ["pull out"] },
 
-    {
-        vi: "bắt đầu thói quen",
-        en: ["take to"]
-    },
+    // 59
+    { id: 59, vi: "bắt đầu thói quen", en: ["take to"] },
 
+    // 60
     {
+        id: 60,
         vi: "chán",
-        en: [
-            "fed up with",
-            "bored with",
-            "tired of"
-        ]
+        en: ["fed up with", "bored with", "tired of"]
     },
 
-    {
-        vi: "tổ chức tiệc",
-        en: ["throw a party"]
-    },
+    // 61
+    { id: 61, vi: "tổ chức tiệc", en: ["throw a party"] },
 
-    {
-        vi: "trầm tư suy nghĩ",
-        en: ["meditative"]
-    },
+    // 62
+    { id: 62, vi: "trầm tư suy nghĩ", en: ["meditative"] },
 
-    {
-        vi: "vui vẻ",
-        en: ["gleeful"]
-    },
+    // 63
+    { id: 63, vi: "vui vẻ", en: ["gleeful"] },
 
-    {
-        vi: "nghiêm khắc",
-        en: ["stern", "strict"]
-    },
+    // 64
+    { id: 64, vi: "nghiêm khắc", en: ["stern", "strict"] },
 
-    {
-        vi: "tuyệt vọng",
-        en: ["desperate"]
-    },
+    // 65
+    { id: 65, vi: "tuyệt vọng", en: ["desperate"] },
 
+    // 66
     {
+        id: 66,
         vi: "trở nên phổ biến",
-        en: [
-            "catch on",
-            "become popular",
-            "in vogue"
-        ]
+        en: ["catch on", "become popular", "in vogue"]
     },
 
-    {
-        vi: "đo lường",
-        en: ["measure", "measurement"]
-    },
+    // 67
+    { id: 67, vi: "đo lường", en: ["measure", "measurement"] },
 
-    {
-        vi: "dồi dào",
-        en: ["abundant", "plentiful"]
-    },
+    // 68
+    { id: 68, vi: "dồi dào", en: ["abundant", "plentiful"] },
 
-    {
-        vi: "cần thứ gì",
-        en: ["do with something"]
-    },
+    // 69
+    { id: 69, vi: "cần thứ gì", en: ["do with sth"] },
 
-    {
-        vi: "người xem",
-        en: ["onlooker", "viewer"]
-    },
+    // 70
+    { id: 70, vi: "người xem", en: ["onlooker", "viewer"] },
 
+    // 71
     {
+        id: 71,
         vi: "đáng kể",
         en: ["considerable", "significant"]
     },
 
+    // 72
     {
+        id: 72,
         vi: "dập lửa",
         en: ["put out", "extinguish"]
     },
 
+    // 73
     {
+        id: 73,
         vi: "ghé thăm",
         en: [
             "drop by",
@@ -500,714 +337,627 @@ const vocabulary = [
             "pop in",
             "pop by",
             "pay a visit to",
-            "pay someone a visit"
+            "pay so a visit"
         ]
     },
 
+    // 74
     {
+        id: 74,
         vi: "phát hành / làm nổi bật",
         en: ["bring out"]
     },
 
+    // 75
     {
+        id: 75,
         vi: "xuất hiện trong tâm trí ai đó",
-        en: ["enter someone's mind", "enter someone's head"]
+        en: ["enter so's mind", "enter so's head"]
     },
 
+    // 76
     {
+        id: 76,
         vi: "chợt nghĩ",
-        en: ["cross someone's mind", "cross someone's head"]
+        en: ["cross so's mind", "cross so's head"]
     },
 
-    {
-        vi: "quên mất",
-        en: ["slip someone's mind"]
-    },
+    // 77
+    { id: 77, vi: "quên mất", en: ["slip so's mind"] },
 
-    {
-        vi: "trống rỗng",
-        en: ["go blank"]
-    },
+    // 78
+    { id: 78, vi: "trống rỗng", en: ["go blank"] },
 
+    // 79
     {
+        id: 79,
         vi: "hy vọng điều gì",
-        en: ["in the hope of"]
+        en: ["in the hope of ving"]
     },
 
+    // 80
     {
+        id: 80,
         vi: "công thức nhờ vả",
         en: [
-            "have someone do something",
-            "get someone to do something",
-            "have something done",
-            "get something done"
+            "have so do sth",
+            "get so to v",
+            "have sth v3/ed",
+            "get sth v3/ed"
         ]
     },
 
+    // 81
     {
+        id: 81,
         vi: "thích cái này hơn cái kia",
-        en: ["prefer doing something to doing something"]
+        en: ["prefer ving to ving"]
     },
 
+    // 82
+    { id: 82, vi: "chú ý đến", en: ["take notice of"] },
+
+    // 83
+    { id: 83, vi: "bị đuổi (học)", en: ["expelled from"] },
+
+    // 84
+    { id: 84, vi: "theo như", en: ["as far as"] },
+
+    // 85
+    { id: 85, vi: "miễn là", en: ["as long as"] },
+
+    // 86
     {
-        vi: "chú ý đến",
-        en: ["take notice of"]
+        id: 86,
+        vi: "hiện tại có thật: S + Vs/es",
+        en: ["as if", "as though"]
+    },
+    {
+        id: 86,
+        vi: "hiện tại không thật: S + V2/ed",
+        en: ["as if", "as though"]
+    },
+    {
+        id: 86,
+        vi: "quá khứ không thật: S + had V3/ed",
+        en: ["as if", "as though"]
     },
 
-    {
-        vi: "bị đuổi học",
-        en: ["expelled from"]
-    },
+    // 87
+    { id: 87, vi: "bùng nổ", en: ["outbreak"] },
 
-    {
-        vi: "theo như",
-        en: ["as far as"]
-    },
+    // 88
+    { id: 88, vi: "the first/second + to V", en: ["the first/second + to v"] },
 
-    {
-        vi: "miễn là",
-        en: ["as long as"]
-    },
+    // 89
+    { id: 89, vi: "vui vẻ", en: ["light-hearted"] },
 
-    {
-        vi: "bùng nổ",
-        en: ["outbreak"]
-    },
+    // 90
+    { id: 90, vi: "hiền hậu", en: ["warm-hearted"] },
 
-    {
-        vi: "vui vẻ",
-        en: ["light-hearted"]
-    },
+    // 91
+    { id: 91, vi: "hào phóng", en: ["big-hearted"] },
 
-    {
-        vi: "hiền hậu",
-        en: ["warm-hearted"]
-    },
+    // 92
+    { id: 92, vi: "hết lòng", en: ["whole-hearted"] },
 
-    {
-        vi: "hào phóng",
-        en: ["big-hearted"]
-    },
+    // 93
+    { id: 93, vi: "chắc hẳn đã", en: ["must have v3/ed"] },
+    { id: 93, vi: "lẽ ra nên", en: ["should have v3/ed"] },
+    { id: 93, vi: "có thể đã", en: ["can have v3/ed", "could have v3/ed"] },
 
+    // 94
     {
-        vi: "hết lòng",
-        en: ["whole-hearted"]
-    },
-
-    {
-        vi: "chắc hẳn đã",
-        en: ["must have"]
-    },
-
-    {
-        vi: "lẽ ra nên",
-        en: ["should have"]
-    },
-
-    {
-        vi: "có thể đã",
-        en: ["can have", "could have"]
-    },
-
-    {
+        id: 94,
         vi: "xem là điều hiển nhiên",
-        en: ["take something for granted"]
+        en: ["take sth for granted"]
     },
 
-    {
-        vi: "truyền cảm hứng",
-        en: ["thought-provoking"]
-    },
+    // 95
+    { id: 95, vi: "truyền cảm hứng", en: ["thought-provoking"] },
 
+    // 96
     {
+        id: 96,
         vi: "quy định, luật lệ",
         en: ["regulation", "rule"]
     },
 
+    // 97
     {
-        vi: "cãi lại / trả treo",
-        en: ["talk back to"]
+        id: 97,
+        vi: "It is Adj + that + S + (should) + Vo",
+        en: ["it is adj + that + s + should + vo"]
     },
 
-    {
-        vi: "tranh cãi",
-        en: ["fall out"]
-    },
+    // 98
+    { id: 98, vi: "cãi lại/trả treo", en: ["talk back to"] },
+    { id: 98, vi: "tranh cãi", en: ["fall out"] },
 
-    {
-        vi: "hồi tưởng",
-        en: ["think back on"]
-    },
+    // 99
+    { id: 99, vi: "hồi tưởng", en: ["think back on"] },
 
-    {
-        vi: "dựa vào",
-        en: ["fall back on"]
-    },
+    // 100
+    { id: 100, vi: "dựa vào", en: ["fall back on"] },
 
-    {
-        vi: "biểu diễn",
-        en: ["put on a play"]
-    },
+    // 101
+    { id: 101, vi: "biểu diễn", en: ["put on a play"] },
 
-    {
-        vi: "trả thù",
-        en: ["get back at"]
-    },
+    // 102
+    { id: 102, vi: "trả thù", en: ["get back at"] },
 
-    {
-        vi: "nịnh bợ",
-        en: ["make up to"]
-    },
+    // 103
+    { id: 103, vi: "nịnh bợ", en: ["make up to"] },
 
+    // 104
     {
+        id: 104,
         vi: "mắc bệnh",
-        en: [
-            "go down with",
-            "come down with",
-            "contract disease"
-        ]
+        en: ["go down with", "come down with", "contract disease"]
     },
 
-    {
-        vi: "nghĩ ra",
-        en: ["come up with"]
-    },
+    // 105
+    { id: 105, vi: "nghĩ ra", en: ["come up with"] },
 
-    {
-        vi: "ngã",
-        en: ["fall over"]
-    },
+    // 106
+    { id: 106, vi: "ngã", en: ["fall over"] },
 
-    {
-        vi: "lùi",
-        en: ["fall back"]
-    },
+    // 107
+    { id: 107, vi: "lùi", en: ["fall back"] },
 
-    {
-        vi: "rơi",
-        en: ["fall off"]
-    },
+    // 108
+    { id: 108, vi: "rơi", en: ["fall off"] },
 
+    // 109
     {
-        vi: "đối mặt với / gặp phải khó khăn, trở ngại",
+        id: 109,
+        vi: "đối mặt với / gặp phải (khó khăn, trở ngại)",
         en: ["come up against"]
     },
 
-    {
-        vi: "dự định",
-        en: ["be about to"]
-    },
+    // 110
+    { id: 110, vi: "dự định", en: ["be about to"] },
 
-    {
-        vi: "thường xuyên",
-        en: ["on a regular basis"]
-    },
+    // 111
+    { id: 111, vi: "thường xuyên", en: ["on a regular basis"] },
 
-    {
-        vi: "bảo mật",
-        en: ["confidential"]
-    },
+    // 112
+    { id: 112, vi: "bảo mật", en: ["confidential"] },
 
+    // 113
     {
+        id: 113,
         vi: "phá hủy",
-        en: [
-            "tear down",
-            "burn down",
-            "pull down"
-        ]
+        en: ["tear down", "burn down", "pull down"]
     },
 
+    // 114
+    { id: 114, vi: "thờ ơ", en: ["indifferent to"] },
+
+    // 115
+    { id: 115, vi: "It's (high) time S + V2/ed", en: ["it's (high) time s + v2/ed"] },
+
+    // 116
+    { id: 116, vi: "người tị nạn", en: ["refugee"] },
+
+    // 117
     {
-        vi: "thờ ơ",
-        en: ["indifferent to"]
+        id: 117,
+        vi: "S + would rather + hiện tại: V0 than V0",
+        en: ["s + would rather + v0 than v0"]
+    },
+    {
+        id: 117,
+        vi: "S + V2/ed",
+        en: ["s + v2/ed"]
+    },
+    {
+        id: 117,
+        vi: "quá khứ: have V3/ed",
+        en: ["have v3/ed"]
+    },
+    {
+        id: 117,
+        vi: "S + had V3/ed",
+        en: ["s + had v3/ed"]
     },
 
-    {
-        vi: "người tị nạn",
-        en: ["refugee"]
-    },
+    // 118
+    { id: 118, vi: "có thói quen", en: ["in the habit of"] },
 
+    // 119
     {
-        vi: "có thói quen",
-        en: ["in the habit of"]
-    },
-
-    {
+        id: 119,
         vi: "dù thế nào đi chăng nữa",
         en: [
-            "no matter how",
-            "however",
-            "as"
+            "no matter how + adj/adv + s + v",
+            "however + adj/adv + s + v",
+            "adj/adv + as + s + v"
         ]
     },
 
+    // 120
     {
+        id: 120,
         vi: "lẫn nhau",
         en: ["each other", "one another"]
     },
 
+    // 121
     {
-        vi: "món hời / trả giá",
+        id: 121,
+        vi: "món hời/trả giá",
         en: ["bargain"]
     },
 
-    {
-        vi: "tiết lộ",
-        en: ["reveal"]
-    },
+    // 122
+    { id: 122, vi: "tiết lộ", en: ["reveal"] },
 
-    {
-        vi: "hoảng loạn",
-        en: ["in panic"]
-    },
+    // 123
+    { id: 123, vi: "hoảng loạn", en: ["in panic"] },
 
-    {
-        vi: "làm cho thông gió",
-        en: ["ventilate"]
-    },
+    // 124
+    { id: 124, vi: "làm cho thông gió", en: ["ventilate"] },
 
-    {
-        vi: "thoáng mát",
-        en: ["breezy"]
-    },
+    // 125
+    { id: 125, vi: "thoáng mát", en: ["breezy"] },
 
-    {
-        vi: "có gió lùa",
-        en: ["draughty"]
-    },
+    // 126
+    { id: 126, vi: "có gió lùa", en: ["draughty"] },
 
+    // 127
     {
+        id: 127,
         vi: "thực tiễn",
-        en: [
-            "utilitarian",
-            "practical",
-            "no-frills"
-        ]
+        en: ["utilitarian", "practical", "no-frills"]
     },
 
-    {
-        vi: "lắp ráp",
-        en: ["assemble"]
-    },
+    // 128
+    { id: 128, vi: "lắp ráp", en: ["assemble"] },
 
+    // 129
     {
+        id: 129,
         vi: "lộn xộn",
-        en: [
-            "chaos",
-            "clutter",
-            "mess"
-        ]
+        en: ["chaos", "clutter", "mess"]
     },
 
-    {
-        vi: "rõ ràng",
-        en: ["discernible"]
-    },
+    // 130
+    { id: 130, vi: "rõ ràng", en: ["discernible"] },
 
-    {
-        vi: "tăng lên",
-        en: ["augment"]
-    },
+    // 131
+    { id: 131, vi: "tăng lên", en: ["augment"] },
 
-    {
-        vi: "làm trầm trọng",
-        en: ["exacerbate"]
-    },
+    // 132
+    { id: 132, vi: "làm trầm trọng", en: ["exacerbate"] },
 
+    // 133
     {
-        vi: "không thể tránh khỏi / tất yếu",
+        id: 133,
+        vi: "không thể tránh khỏi/tất yếu",
         en: ["inevitable"]
     },
 
-    {
-        vi: "sự cạn kiệt",
-        en: ["depletion"]
-    },
+    // 134
+    { id: 134, vi: "sự cạn kiệt", en: ["depletion"] },
 
-    {
-        vi: "sự tàn phá",
-        en: ["devastation"]
-    },
+    // 135
+    { id: 135, vi: "sự tàn phá", en: ["devastation"] },
 
-    {
-        vi: "sự chìm xuống",
-        en: ["sinking"]
-    },
+    // 136
+    { id: 136, vi: "sự chìm xuống", en: ["sinking"] },
 
-    {
-        vi: "nỗ lực",
-        en: ["in a bid to"]
-    },
+    // 137
+    { id: 137, vi: "nỗ lực", en: ["in a bid + to v"] },
 
-    {
-        vi: "chiến dịch",
-        en: ["campaign"]
-    },
+    // 138
+    { id: 138, vi: "chiến dịch", en: ["campaign"] },
 
-    {
-        vi: "tưởng tượng",
-        en: ["envision"]
-    },
+    // 139
+    { id: 139, vi: "tưởng tượng", en: ["envision"] },
 
-    {
-        vi: "đầu tư",
-        en: ["invest in"]
-    },
+    // 140
+    { id: 140, vi: "đầu tư", en: ["invest + in"] },
 
-    {
-        vi: "có lợi cho ai",
-        en: ["do someone good"]
-    },
+    // 141
+    { id: 141, vi: "có lợi cho ai", en: ["do so good"] },
 
-    {
-        vi: "đi đến kết luận",
-        en: ["come to a conclusion"]
-    },
+    // 142
+    { id: 142, vi: "đi đến kết luận", en: ["come to a conclusion"] },
 
-    {
-        vi: "trình bày sự việc",
-        en: ["give an account of"]
-    },
+    // 143
+    { id: 143, vi: "trình bày sự việc", en: ["give an account of"] },
 
-    {
-        vi: "làm cho ai hiểu",
-        en: ["drive it home to someone"]
-    },
+    // 144
+    { id: 144, vi: "làm cho ai hiểu", en: ["drive it home to so"] },
 
+    // 145
     {
+        id: 145,
         vi: "tức giận",
-        en: [
-            "get hot under the collar",
-            "become furious"
-        ]
+        en: ["get hot under the collar", "become furious"]
     },
 
+    // 146
     {
+        id: 146,
         vi: "rõ ràng",
-        en: [
-            "obvious",
-            "apparent",
-            "clear"
-        ]
+        en: ["obvious", "apparent", "clear"]
     },
 
+    // 147
     {
+        id: 147,
         vi: "vượt ngoài tầm kiểm soát",
         en: ["run riot"]
     },
 
-    {
-        vi: "truyền tải",
-        en: ["convey"]
-    },
+    // 148
+    { id: 148, vi: "truyền tải", en: ["convey"] },
 
-    {
-        vi: "thu nhỏ, co lại",
-        en: ["shrink"]
-    },
+    // 149
+    { id: 149, vi: "thu nhỏ, co lại", en: ["shrink"] },
 
+    // 150
     {
+        id: 150,
         vi: "sa thải",
-        en: [
-            "dismiss",
-            "sack",
-            "lay off",
-            "dismissal"
-        ]
+        en: ["dismiss", "sack", "lay off"]
     },
+    { id: 150, vi: "sự sa thải", en: ["dismissal"] },
 
-    {
-        vi: "người kiêu ngạo",
-        en: ["snob"]
-    },
+    // 151
+    { id: 151, vi: "người kiêu ngạo", en: ["snob"] },
 
+    // 152
     {
+        id: 152,
         vi: "gây ra",
-        en: [
-            "bring on",
-            "cause",
-            "result in",
-            "lead to",
-            "trigger"
-        ]
+        en: ["bring on", "cause", "result in", "lead to", "trigger"]
     },
 
+    // 153
     {
+        id: 153,
         vi: "bận rộn",
         en: [
-            "up to someone's ears",
-            "up to someone's neck",
+            "up to so's ears",
+            "up to so's neck",
             "overwhelming",
             "swamped with"
         ]
     },
 
+    // 154
     {
+        id: 154,
         vi: "mục đích",
-        en: [
-            "with a view to",
-            "with an eye to"
-        ]
+        en: ["with a view to ving", "with an eye to ving"]
     },
 
-    {
-        vi: "phạm tội",
-        en: ["commit a crime"]
-    },
+    // 155
+    { id: 155, vi: "phạm tội", en: ["commit a crime"] },
 
-    {
-        vi: "chọc ai đó",
-        en: ["pull someone's leg"]
-    },
+    // 156
+    { id: 156, vi: "chọc ai đó", en: ["pull so's leg"] },
 
+    // 157
     {
+        id: 157,
         vi: "xem xét, cân nhắc",
-        en: [
-            "take into account",
-            "take into consideration"
-        ]
+        en: ["take into account", "take into consideration"]
     },
 
+    // 158
     {
+        id: 158,
         vi: "vô tình gặp",
         en: ["run into", "come across"]
     },
 
+    // 159
     {
+        id: 159,
         vi: "bắt buộc",
         en: [
             "oblige",
             "obligation",
             "obligatory",
-            "compulsory",
+            "compulsory for",
             "mandatory"
         ]
     },
 
+    // 160
     {
+        id: 160,
         vi: "động lực",
-        en: [
-            "incentive",
-            "motivation"
-        ]
+        en: ["incentive", "motivation"]
     },
 
+    // 161
     {
+        id: 161,
         vi: "đối thủ",
-        en: [
-            "opponent",
-            "rival"
-        ]
+        en: ["opponent", "rival"]
     },
 
+    // 162
     {
+        id: 162,
         vi: "xóa bỏ, loại bỏ",
         en: [
             "eliminate",
             "eradicate",
             "get rid of",
             "do away with",
-            "phase out"
+            "phased out"
         ]
     },
 
-    {
-        vi: "ủy ban",
-        en: ["committee"]
-    },
+    // 163
+    { id: 163, vi: "ủy ban", en: ["committee"] },
 
-    {
-        vi: "cam kết",
-        en: ["pledge"]
-    },
+    // 164
+    { id: 164, vi: "cam kết", en: ["pledge"] },
 
+    // 165
     {
+        id: 165,
         vi: "người quan trọng",
-        en: ["the apple of someone's eye"]
+        en: ["the apple of so's eye"]
     },
 
+    // 166
     {
+        id: 166,
         vi: "biết rõ trong lòng bàn tay",
-        en: ["the back of someone's hand"]
+        en: ["the back of so's hand"]
     },
 
+    // 167
     {
+        id: 167,
         vi: "sắp nhớ ra",
-        en: ["the tip of someone's tongue"]
+        en: ["the tip of so's tongue"]
     },
 
-    {
-        vi: "thay mặt cho",
-        en: ["on behalf of"]
-    },
+    // 168
+    { id: 168, vi: "thay mặt cho", en: ["on behalf of"] },
 
-    {
-        vi: "học bù",
-        en: ["catch up on"]
-    },
+    // 169
+    { id: 169, vi: "học bù", en: ["catch up on"] },
 
-    {
-        vi: "cân nhắc kỹ",
-        en: ["contemplate"]
-    },
+    // 170
+    { id: 170, vi: "cân nhắc kỹ", en: ["contemplate + ving"] },
 
+    // 171
     {
+        id: 171,
         vi: "phân biệt",
         en: ["differentiate"]
     },
-
     {
+        id: 171,
         vi: "khác",
         en: ["differ"]
     },
 
-    {
-        vi: "cuộc đình công",
-        en: ["strike"]
-    },
+    // 172
+    { id: 172, vi: "cuộc đình công", en: ["strike"] },
 
-    {
-        vi: "sự va chạm",
-        en: ["collision"]
-    },
+    // 173
+    { id: 173, vi: "sự va chạm", en: ["collision"] },
 
-    {
-        vi: "hối lộ",
-        en: ["bribery"]
-    },
+    // 174
+    { id: 174, vi: "hối lộ", en: ["bribery"] },
 
+    // 175
     {
+        id: 175,
         vi: "kĩ lưỡng, phức tạp",
         en: ["elaborate", "thorough"]
     },
 
-    {
-        vi: "ban đầu",
-        en: ["initial"]
-    },
+    // 176
+    { id: 176, vi: "ban đầu", en: ["initial"] },
 
-    {
-        vi: "người phạm lỗi",
-        en: ["offender"]
-    },
+    // 177
+    { id: 177, vi: "người phạm lỗi", en: ["offender"] },
 
-    {
-        vi: "khai báo",
-        en: ["make a statement"]
-    },
+    // 178
+    { id: 178, vi: "khai báo", en: ["make a statement"] },
 
-    {
-        vi: "bắt cóc",
-        en: ["kidnap"]
-    },
+    // 179
+    { id: 179, vi: "bắt cóc", en: ["kidnap"] },
 
-    {
-        vi: "tống tiền",
-        en: ["blackmail"]
-    },
+    // 180
+    { id: 180, vi: "tống tiền", en: ["blackmail"] },
 
-    {
-        vi: "thiếu hụt",
-        en: ["deficiency"]
-    },
+    // 181
+    { id: 181, vi: "thiếu hụt", en: ["deficiency"] },
 
-    {
-        vi: "bắt giữ",
-        en: ["arrest"]
-    },
+    // 182
+    { id: 182, vi: "bắt giữ", en: ["arrest"] },
 
-    {
-        vi: "tuyên án",
-        en: ["sentence"]
-    },
+    // 183
+    { id: 183, vi: "tuyên án", en: ["sentence"] },
 
+    // 184
     {
+        id: 184,
         vi: "bất kể",
-        en: [
-            "regardless of",
-            "irrespective of"
-        ]
+        en: ["regardless of", "irrespective of"]
     },
 
-    {
-        vi: "nỗ lực",
-        en: ["pull someone's socks up"]
-    },
+    // 185
+    { id: 185, vi: "nỗ lực", en: ["pull so's socks up"] },
 
-    {
-        vi: "che đậy",
-        en: ["disguise"]
-    },
+    // 186
+    { id: 186, vi: "che đậy", en: ["disguise"] },
 
-    {
-        vi: "bạn đồng hành",
-        en: ["companion"]
-    },
+    // 187
+    { id: 187, vi: "bạn đồng hành", en: ["companion"] },
 
-    {
-        vi: "nghiêm trọng",
-        en: ["crippling"]
-    },
+    // 188
+    { id: 188, vi: "nghiêm trọng", en: ["crippling"] },
 
+    // 189
     {
-        vi: "lừa kêu",
+        id: 189,
+        vi: "tiếng kêu của lừa",
         en: ["braying"]
     },
-
     {
-        vi: "cừu kêu",
+        id: 189,
+        vi: "tiếng kêu của cừu",
         en: ["bleating"]
     },
 
+    // 190
     {
+        id: 190,
         vi: "đàn cá",
         en: ["shoals of fish", "schools of fish"]
     },
-
     {
-        vi: "đàn kiến / đàn ong",
+        id: 190,
+        vi: "đàn kiến/ong",
         en: ["swarms of ants", "swarms of bees"]
     },
-
     {
-        vi: "đàn vịt / đàn chim",
+        id: 190,
+        vi: "đàn vịt/chim",
         en: ["flocks of ducks", "flocks of birds"]
     },
-
     {
+        id: 190,
         vi: "đàn gia súc",
         en: ["herds of cattle"]
     },
 
-    {
-        vi: "đống quần áo",
-        en: ["jumble of clothes"]
-    },
+    // 191
+    { id: 191, vi: "đống quần áo", en: ["jumble of clothes"] },
 
-    {
-        vi: "tiền chuộc",
-        en: ["ransom"]
-    },
+    // 192
+    { id: 192, vi: "tiền chuộc", en: ["ransom"] },
 
-    {
-        vi: "ngỗ ngược",
-        en: ["unruly"]
-    },
+    // 193
+    { id: 193, vi: "ngỗ ngược", en: ["unruly"] },
 
-    {
-        vi: "đám đông",
-        en: ["mob"]
-    },
+    // 194
+    { id: 194, vi: "đám đông", en: ["mob"] },
 
+    // 195
     {
+        id: 195,
         vi: "cản trở",
-        en: [
-            "hinder",
-            "deter"
-        ]
+        en: ["hinder", "deter"]
     },
 
+    // 196
     {
+        id: 196,
         vi: "tranh cãi",
         en: [
             "dispute",
@@ -1218,22 +968,18 @@ const vocabulary = [
         ]
     },
 
-    {
-        vi: "cần thiết",
-        en: ["indispensable"]
-    },
+    // 197
+    { id: 197, vi: "cần thiết", en: ["indispensable"] },
 
-    {
-        vi: "rút lui",
-        en: ["retreat"]
-    },
+    // 198
+    { id: 198, vi: "rút lui", en: ["retreat"] },
 
-    {
-        vi: "đầu hàng",
-        en: ["surrender"]
-    },
+    // 199
+    { id: 199, vi: "đầu hàng", en: ["surrender"] },
 
+    // 200
     {
+        id: 200,
         vi: "thành công",
         en: [
             "come up trumps",
@@ -1244,350 +990,288 @@ const vocabulary = [
         ]
     },
 
-    {
-        vi: "hoài nghi",
-        en: ["skeptical"]
-    },
+    // 201
+    { id: 201, vi: "hoài nghi", en: ["skeptical"] },
 
+    // 202
     {
+        id: 202,
         vi: "lo lắng",
-        en: [
-            "dismay",
-            "consternation"
-        ]
+        en: ["dismay", "consternation"]
     },
 
+    // 203
     {
+        id: 203,
         vi: "hợp lý",
-        en: [
-            "plausible",
-            "reasonable"
-        ]
+        en: ["plausible", "reasonable"]
     },
 
+    // 204
     {
+        id: 204,
         vi: "dễ bị tổn thương",
-        en: [
-            "susceptible",
-            "vulnerable"
-        ]
+        en: ["susceptible", "vulnerable"]
     },
 
+    // 205
     {
+        id: 205,
         vi: "khéo léo",
-        en: [
-            "tactful",
-            "diplomatic"
-        ]
+        en: ["tactful", "diplomatic"]
     },
 
-    {
-        vi: "lỗi thời",
-        en: ["out of practice"]
-    },
+    // 206
+    { id: 206, vi: "lỗi thời", en: ["out of practise"] },
 
+    // 207
     {
+        id: 207,
         vi: "sự tưởng tượng",
         en: ["imagination"]
     },
-
     {
+        id: 207,
         vi: "tưởng tượng",
         en: ["imagine"]
     },
-
     {
+        id: 207,
         vi: "giàu trí tưởng tượng",
         en: ["imaginative"]
     },
-
     {
+        id: 207,
         vi: "không có thật",
         en: ["imaginary"]
     },
 
+    // 208
     {
+        id: 208,
         vi: "linh hoạt",
-        en: [
-            "versatile",
-            "flexible"
-        ]
+        en: ["versatile", "flexible"]
     },
 
-    {
-        vi: "tiêu hết tiền",
-        en: ["get through"]
-    },
+    // 209
+    { id: 209, vi: "tiêu hết tiền", en: ["get through"] },
 
+    // 210
     {
+        id: 210,
         vi: "giúp ai vượt qua khó khăn",
-        en: ["help someone out"]
+        en: ["help so out"]
     },
 
-    {
-        vi: "thuế hải quan",
-        en: ["customs duty"]
-    },
+    // 211
+    { id: 211, vi: "thuế hải quan", en: ["customs duty"] },
 
-    {
-        vi: "viễn cảnh",
-        en: ["prospect"]
-    },
+    // 212
+    { id: 212, vi: "viễn cảnh", en: ["prospect"] },
 
-    {
-        vi: "đổi lượt",
-        en: ["take turns"]
-    },
+    // 213
+    { id: 213, vi: "đổi lượt", en: ["take turns"] },
 
-    {
-        vi: "hít vào",
-        en: ["inhale"]
-    },
+    // 214
+    { id: 214, vi: "hít vào", en: ["inhale"] },
+    { id: 214, vi: "thở ra", en: ["exhale"] },
 
-    {
-        vi: "thở ra",
-        en: ["exhale"]
-    },
+    // 215
+    { id: 215, vi: "làm ai đó tỉnh lại", en: ["bring so to"] },
 
+    // 216
     {
-        vi: "làm ai đó tỉnh lại",
-        en: ["bring someone to"]
-    },
-
-    {
+        id: 216,
         vi: "bất tỉnh",
-        en: [
-            "pass out",
-            "faint",
-            "unconscious"
-        ]
+        en: ["pass out", "faint", "unconscious"]
     },
 
+    // 217
+    { id: 217, vi: "hội ý", en: ["confer"] },
+
+    // 218
+    { id: 218, vi: "xuất viện", en: ["discharged from"] },
+
+    // 219
+    { id: 219, vi: "người nhập cư", en: ["immigrant"] },
+    { id: 219, vi: "sự nhập cư", en: ["immigration"] },
+
+    // 220
+    { id: 220, vi: "hiểu lầm", en: ["get one's wires crossed"] },
+
+    // 221
+    { id: 221, vi: "nuốt lời", en: ["go back on so's word"] },
+
+    // 222
+    { id: 222, vi: "hoàn toàn không", en: ["by no means"] },
+
+    // 223
+    { id: 223, vi: "chắc chắn", en: ["by all means"] },
+
+    // 224
+    { id: 224, vi: "dao động", en: ["fluctuate"] },
+
+    // 225
     {
-        vi: "hội ý",
-        en: ["confer"]
+        id: 225,
+        vi: "Many + a/an + N ít → V ít",
+        en: ["many + a/an + n + singular verb"]
     },
 
-    {
-        vi: "xuất viện",
-        en: ["discharged from"]
-    },
+    // 226
+    { id: 226, vi: "hóa ra", en: ["turn out"] },
 
-    {
-        vi: "người nhập cư",
-        en: ["immigrant"]
-    },
+    // 227
+    { id: 227, vi: "là do", en: ["put down to"] },
 
+    // 228
     {
-        vi: "sự nhập cư",
-        en: ["immigration"]
-    },
-
-    {
-        vi: "hiểu lầm",
-        en: ["get one's wires crossed"]
-    },
-
-    {
-        vi: "nuốt lời",
-        en: ["go back on someone's word"]
-    },
-
-    {
-        vi: "hoàn toàn không",
-        en: ["by no means"]
-    },
-
-    {
-        vi: "chắc chắn",
-        en: ["by all means"]
-    },
-
-    {
-        vi: "dao động",
-        en: ["fluctuate"]
-    },
-
-    {
-        vi: "hóa ra",
-        en: ["turn out"]
-    },
-
-    {
-        vi: "là do",
-        en: ["put down to"]
-    },
-
-    {
-        vi: "hứng chịu, nhận lấy lời chỉ trích",
+        id: 228,
+        vi: "hứng chịu, nhận lấy (lời chỉ trích, chê bai)",
         en: ["come in for"]
     },
 
-    {
-        vi: "đề xuất",
-        en: ["put forward"]
-    },
+    // 229
+    { id: 229, vi: "đề xuất", en: ["put forward to"] },
 
+    // 230
     {
+        id: 230,
         vi: "tôi đồng ý",
-        en: [
-            "you can say that again",
-            "i'll say"
-        ]
+        en: ["you can say that again", "i'll say"]
     },
 
-    {
-        vi: "thay thế cho ai",
-        en: ["stand in for"]
-    },
+    // 231
+    { id: 231, vi: "thay thế cho ai", en: ["stand in for"] },
 
-    {
-        vi: "nhìn thoáng qua",
-        en: ["glimpse of"]
-    },
+    // 232
+    { id: 232, vi: "nhìn thoáng qua", en: ["glimpse of"] },
 
-    {
-        vi: "xem xét kĩ",
-        en: ["vet"]
-    },
+    // 233
+    { id: 233, vi: "xem xét kĩ", en: ["vet"] },
 
-    {
-        vi: "thích nghi",
-        en: ["adapt to"]
-    },
+    // 234
+    { id: 234, vi: "thích nghi", en: ["adapt to"] },
 
-    {
-        vi: "thừa kế",
-        en: ["come into", "inherit"]
-    },
+    // 235
+    { id: 235, vi: "thừa kế", en: ["come into", "inherit"] },
+    { id: 235, vi: "người thừa kế", en: ["heir"] },
 
-    {
-        vi: "người thừa kế",
-        en: ["heir"]
-    },
+    // 236
+    { id: 236, vi: "gọi điện cho ai", en: ["call up so"] },
 
-    {
-        vi: "gọi điện cho ai",
-        en: ["call someone up"]
-    },
+    // 237
+    { id: 237, vi: "lọc, khử", en: ["purge"] },
 
-    {
-        vi: "lọc, khử",
-        en: ["purge"]
-    },
+    // 238
+    { id: 238, vi: "tuổi thọ", en: ["life expectancy"] },
 
+    // 239
     {
-        vi: "tuổi thọ",
-        en: ["life expectancy"]
-    },
-
-    {
+        id: 239,
         vi: "đảm nhận vị trí ai đó",
-        en: ["step into someone's shoes"]
+        en: ["step into so's shoes"]
     },
 
+    // 240
     {
-        vi: "một người quan trọng",
+        id: 240,
+        vi: "1 người quan trọng",
         en: ["a fat cat"]
     },
 
+    // 241
     {
+        id: 241,
+        vi: "such (a/an) + adj + N",
+        en: ["such (a/an) + adj + n"]
+    },
+    {
+        id: 241,
+        vi: "so + adj + (a/an) + N",
+        en: ["so + adj + (a/an) + n"]
+    },
+
+    // 242
+    {
+        id: 242,
         vi: "thuộc về trí tuệ",
         en: ["intellectual"]
     },
 
+    // 243
     {
+        id: 243,
         vi: "bị lỗi",
-        en: [
-            "defective",
-            "faulty"
-        ]
+        en: ["defective", "faulty"]
     },
 
-    {
-        vi: "phong trào",
-        en: ["movement"]
-    },
+    // 244
+    { id: 244, vi: "phong trào", en: ["movement"] },
 
-    {
-        vi: "phát triển hơn",
-        en: ["outgrow"]
-    },
+    // 245
+    { id: 245, vi: "phát triển hơn", en: ["outgrow"] },
 
-    {
-        vi: "vượt trội",
-        en: ["outclassed"]
-    },
+    // 246
+    { id: 246, vi: "vượt trội", en: ["outclassed"] },
 
-    {
-        vi: "đông",
-        en: ["outnumbered"]
-    },
+    // 247
+    { id: 247, vi: "đông", en: ["outnumbered"] },
 
+    // 248
     {
+        id: 248,
         vi: "nhanh hơn (tốc độ)",
         en: ["outraced"]
     },
 
+    // 249
     {
+        id: 249,
         vi: "lấy lại phong độ, khẳng định năng lực",
-        en: ["come into someone's own"]
+        en: ["come into so's own"]
     },
 
+    // 250
     {
+        id: 250,
         vi: "trọng tài (baseball, tennis)",
         en: ["umpire"]
     },
 
-    {
-        vi: "người kể lại",
-        en: ["narrator"]
-    },
+    // 251
+    { id: 251, vi: "người kể lại", en: ["narrator"] },
 
+    // 252
     {
+        id: 252,
         vi: "giảm cân cấp tốc",
         en: ["put on a crash diet"]
     },
 
-    {
-        vi: "ăn ngấu nghiến",
-        en: ["bolt"]
-    },
+    // 253
+    { id: 253, vi: "ăn ngấu nghiến", en: ["bolt"] },
 
-    {
-        vi: "đói cồn cào",
-        en: ["hunger pangs"]
-    },
+    // 254
+    { id: 254, vi: "đói cồn cào", en: ["hunger pangs"] },
 
-    {
-        vi: "đặc quyền",
-        en: ["privilege"]
-    },
+    // 255
+    { id: 255, vi: "đặc quyền", en: ["privilege"] },
 
-    {
-        vi: "khét tiếng",
-        en: ["notorious"]
-    },
+    // 256
+    { id: 256, vi: "khét tiếng", en: ["notorious"] },
 
-    {
-        vi: "nổi tiếng",
-        en: ["noted"]
-    },
+    // 257
+    { id: 257, vi: "nổi tiếng", en: ["noted"] },
 
-    {
-        vi: "thì thầm",
-        en: ["put a bug in someone's ear"]
-    },
+    // 258
+    { id: 258, vi: "thì thầm", en: ["put a bug in so's ear"] },
 
-    {
-        vi: "đe dọa",
-        en: ["threaten"]
-    },
+    // 259
+    { id: 259, vi: "đe dọa", en: ["threaten"] },
 
-    {
-        vi: "tò mò",
-        en: ["inquisitive"]
-    }
+    // 260
+    { id: 260, vi: "tò mò", en: ["inquisitive"] }
 
 ];
 
@@ -1597,6 +1281,11 @@ const vocabulary = [
    ========================================================= */
 
 const STORAGE_KEY = "vocabWrongWords";
+
+
+/* =========================================================
+   TRẠNG THÁI GAME
+   ========================================================= */
 
 let questionPool = [];
 let currentQuestion = null;
@@ -1608,6 +1297,7 @@ let gameRunning = false;
 let checkingAnswer = false;
 
 let gameMode = "normal";
+
 let gameTotal = 0;
 
 let wrongWords = [];
@@ -1617,81 +1307,188 @@ let wrongWords = [];
    DOM
    ========================================================= */
 
-const promptElement = document.getElementById("prompt");
-const answerInput = document.getElementById("answer");
+const promptEl = document.getElementById("prompt");
+const answerEl = document.getElementById("answer");
 
 const submitBtn = document.getElementById("submitBtn");
 const restartBtn = document.getElementById("restartBtn");
 
 const wrongBtn = document.getElementById("wrongBtn");
-const wrongCount = document.getElementById("wrongCount");
+const wrongCountEl = document.getElementById("wrongCount");
 
-const feedback = document.getElementById("feedback");
+const feedbackEl = document.getElementById("feedback");
 
-const streakElement = document.getElementById("streak");
-const correctElement = document.getElementById("correct");
-const remainingElement = document.getElementById("remaining");
-const totalElement = document.getElementById("total");
+const streakEl = document.getElementById("streak");
+const correctEl = document.getElementById("correct");
+const remainingEl = document.getElementById("remaining");
+const totalEl = document.getElementById("total");
 
 const gameCard = document.getElementById("gameCard");
 const gameOver = document.getElementById("gameOver");
 
-const finalStreak = document.getElementById("finalStreak");
-const overText = document.getElementById("overText");
+const finalStreakEl = document.getElementById("finalStreak");
+const overTextEl = document.getElementById("overText");
 
 const againBtn = document.getElementById("againBtn");
 const reviewBtn = document.getElementById("reviewBtn");
 
 const wrongPanel = document.getElementById("wrongPanel");
 const closeWrongBtn = document.getElementById("closeWrongBtn");
-const wrongList = document.getElementById("wrongList");
+
+const wrongListEl = document.getElementById("wrongList");
 const retryWrongBtn = document.getElementById("retryWrongBtn");
 
 
 /* =========================================================
-   LOCAL STORAGE
+   CHUẨN HÓA
+   ========================================================= */
+
+function normalize(text) {
+
+    return String(text ?? "")
+        .normalize("NFC")
+        .toLowerCase()
+        .trim()
+        .replace(/\s+/g, " ");
+}
+
+
+/* =========================================================
+   XỬ LÝ ĐÁP ÁN NGƯỜI DÙNG
+   ========================================================= */
+
+function parseAnswers(text) {
+
+    return String(text ?? "")
+        .split("=")
+        .map(item => normalize(item))
+        .filter(item => item !== "");
+}
+
+
+/* =========================================================
+   KIỂM TRA ĐÁP ÁN
+   =========================================================
+   
+   KHÔNG QUAN TÂM THỨ TỰ.
+
+   Ví dụ:
+   
+   Đúng:
+   possession = property = valuable = asset
+
+   Cũng đúng:
+   asset = possession = property = valuable
+
+   Cũng đúng:
+   PROPERTY = ASSET = possession = valuable
+
+   Nhưng:
+   possession = property
+
+   → SAI vì thiếu đáp án.
+   ========================================================= */
+
+function answersAreEqual(userAnswers, correctAnswers) {
+
+    const user = userAnswers
+        .map(normalize)
+        .filter(Boolean);
+
+    const correct = correctAnswers
+        .map(normalize)
+        .filter(Boolean);
+
+    // Không đủ / thừa đáp án
+    if (user.length !== correct.length) {
+        return false;
+    }
+
+    // Tạo bản sao
+    const remaining = [...correct];
+
+    for (const answer of user) {
+
+        const index = remaining.indexOf(answer);
+
+        // Không tồn tại
+        if (index === -1) {
+            return false;
+        }
+
+        // Xóa đáp án đã dùng
+        remaining.splice(index, 1);
+    }
+
+    return remaining.length === 0;
+}
+
+
+/* =========================================================
+   TRỘN MẢNG
+   ========================================================= */
+
+function shuffle(array) {
+
+    const result = [...array];
+
+    for (let i = result.length - 1; i > 0; i--) {
+
+        const j = Math.floor(Math.random() * (i + 1));
+
+        [result[i], result[j]] =
+            [result[j], result[i]];
+    }
+
+    return result;
+}
+
+
+/* =========================================================
+   LOAD TỪ SAI
    ========================================================= */
 
 function loadWrongWords() {
 
     try {
 
-        const data =
+        const saved =
             localStorage.getItem(STORAGE_KEY);
 
-        if (!data) {
-            return [];
+        if (!saved) {
+
+            wrongWords = [];
+
+            return;
         }
 
         const parsed =
-            JSON.parse(data);
+            JSON.parse(saved);
 
-        if (!Array.isArray(parsed)) {
-            return [];
+        if (Array.isArray(parsed)) {
+
+            wrongWords = parsed;
+
+        } else {
+
+            wrongWords = [];
         }
-
-        return parsed.filter(item =>
-            item &&
-            typeof item.vi === "string" &&
-            Array.isArray(item.en) &&
-            item.en.length > 0
-        );
 
     } catch (error) {
 
         console.error(
-            "Lỗi đọc localStorage:",
+            "Không thể đọc danh sách từ sai:",
             error
         );
 
-        try {
-            localStorage.removeItem(STORAGE_KEY);
-        } catch (_) {}
-
-        return [];
+        wrongWords = [];
     }
 }
 
+
+/* =========================================================
+   SAVE TỪ SAI
+   ========================================================= */
 
 function saveWrongWords() {
 
@@ -1705,242 +1502,160 @@ function saveWrongWords() {
     } catch (error) {
 
         console.error(
-            "Lỗi lưu từ sai:",
+            "Không thể lưu từ sai:",
             error
         );
     }
+
+    updateWrongCount();
 }
 
 
 /* =========================================================
-   CHUẨN HÓA
+   KEY CỦA TỪ
    ========================================================= */
 
-function normalize(text) {
+function getQuestionKey(question) {
 
-    return String(text ?? "")
-        .toLowerCase()
-        .trim()
-        .replace(/\s+/g, " ");
+    if (!question) {
+        return "";
+    }
+
+    return `${question.id}|${normalize(question.vi)}`;
 }
 
 
 /* =========================================================
-   PHÂN TÁCH ĐÁP ÁN
+   THÊM VÀO TỪ SAI
    ========================================================= */
 
-function parseAnswers(text) {
+function addWrongWord(question) {
 
-    return String(text ?? "")
-        .split("=")
-        .map(item => normalize(item))
-        .filter(item => item.length > 0);
-}
-
-
-/* =========================================================
-   SO SÁNH
-   ========================================================= */
-
-function answersAreEqual(
-    userAnswers,
-    correctAnswers
-) {
-
-    const user =
-        userAnswers
-            .map(normalize)
-            .filter(Boolean)
-            .sort();
-
-    const correct =
-        correctAnswers
-            .map(normalize)
-            .filter(Boolean)
-            .sort();
-
-    if (user.length !== correct.length) {
-        return false;
+    if (!question) {
+        return;
     }
 
-    for (let i = 0; i < correct.length; i++) {
+    const key =
+        getQuestionKey(question);
 
-        if (user[i] !== correct[i]) {
-            return false;
-        }
-    }
+    const exists =
+        wrongWords.some(
+            item =>
+                getQuestionKey(item) === key
+        );
 
-    return true;
-}
-
-
-/* =========================================================
-   XÁO TRỘN
-   ========================================================= */
-
-function shuffle(array) {
-
-    const result = [...array];
-
-    for (
-        let i = result.length - 1;
-        i > 0;
-        i--
-    ) {
-
-        const j =
-            Math.floor(
-                Math.random() * (i + 1)
-            );
-
-        [
-            result[i],
-            result[j]
-        ] = [
-            result[j],
-            result[i]
-        ];
-    }
-
-    return result;
-}
-
-
-/* =========================================================
-   ESCAPE HTML
-   ========================================================= */
-
-function escapeHTML(text) {
-
-    return String(text ?? "")
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;")
-        .replace(/"/g, "&quot;")
-        .replace(/'/g, "&#039;");
-}
-
-
-/* =========================================================
-   CẬP NHẬT THỐNG KÊ
-   ========================================================= */
-
-function updateStats() {
-
-    if (streakElement) {
-        streakElement.textContent = streak;
-    }
-
-    if (correctElement) {
-        correctElement.textContent = correct;
-    }
-
-    if (totalElement) {
-        totalElement.textContent = gameTotal;
-    }
-
-    if (remainingElement) {
-
-        let remaining =
-            questionPool.length;
-
-        if (currentQuestion) {
-            remaining++;
-        }
-
-        remainingElement.textContent =
-            remaining;
-    }
-
-    if (wrongCount) {
-        wrongCount.textContent =
-            wrongWords.length;
-    }
-}
-
-
-/* =========================================================
-   TÌM TỪ SAI
-   ========================================================= */
-
-function findWrongWord(question) {
-
-    return wrongWords.find(item =>
-        normalize(item.vi) ===
-        normalize(question.vi)
-    );
-}
-
-
-/* =========================================================
-   THÊM TỪ SAI
-   ========================================================= */
-
-function addWrongWord(
-    question,
-    userAnswer
-) {
-
-    const existing =
-        findWrongWord(question);
-
-    if (existing) {
-
-        existing.attempts =
-            Number(existing.attempts || 1) + 1;
-
-        existing.lastAnswer =
-            userAnswer;
-
-    } else {
+    if (!exists) {
 
         wrongWords.push({
-
+            id: question.id,
             vi: question.vi,
-
-            en: [...question.en],
-
-            attempts: 1,
-
-            lastAnswer: userAnswer
-
+            en: [...question.en]
         });
+
+        saveWrongWords();
     }
-
-    saveWrongWords();
-
-    renderWrongWords();
-
-    updateStats();
 }
 
 
 /* =========================================================
-   XÓA TỪ SAI KHI LÀM ĐÚNG
+   XÓA KHỎI TỪ SAI
    ========================================================= */
 
 function removeWrongWord(question) {
 
-    const oldLength =
-        wrongWords.length;
-
-    wrongWords =
-        wrongWords.filter(item =>
-            normalize(item.vi) !==
-            normalize(question.vi)
-        );
-
-    if (
-        wrongWords.length !==
-        oldLength
-    ) {
-
-        saveWrongWords();
+    if (!question) {
+        return;
     }
 
-    renderWrongWords();
+    const key =
+        getQuestionKey(question);
 
-    updateStats();
+    wrongWords =
+        wrongWords.filter(
+            item =>
+                getQuestionKey(item) !== key
+        );
+
+    saveWrongWords();
+}
+
+
+/* =========================================================
+   CẬP NHẬT SỐ TỪ SAI
+   ========================================================= */
+
+function updateWrongCount() {
+
+    if (!wrongCountEl) {
+        return;
+    }
+
+    wrongCountEl.textContent =
+        wrongWords.length;
+}
+
+
+/* =========================================================
+   CẬP NHẬT STATS
+   ========================================================= */
+
+function updateStats() {
+
+    if (streakEl) {
+        streakEl.textContent = streak;
+    }
+
+    if (correctEl) {
+        correctEl.textContent = correct;
+    }
+
+    if (remainingEl) {
+        remainingEl.textContent =
+            questionPool.length;
+    }
+
+    if (totalEl) {
+        totalEl.textContent =
+            gameTotal;
+    }
+
+    updateWrongCount();
+}
+
+
+/* =========================================================
+   FEEDBACK
+   ========================================================= */
+
+function showFeedback(message, type) {
+
+    if (!feedbackEl) {
+        return;
+    }
+
+    feedbackEl.textContent =
+        message;
+
+    feedbackEl.className =
+        "feedback";
+
+    if (type) {
+
+        feedbackEl.classList.add(type);
+    }
+}
+
+
+function clearFeedback() {
+
+    if (!feedbackEl) {
+        return;
+    }
+
+    feedbackEl.textContent = "";
+
+    feedbackEl.className =
+        "feedback";
 }
 
 
@@ -1948,111 +1663,79 @@ function removeWrongWord(question) {
    HIỂN THỊ CÂU HỎI
    ========================================================= */
 
-function showQuestion(question) {
-
-    currentQuestion =
-        question;
-
-    if (promptElement) {
-
-        promptElement.textContent =
-            question.vi;
-    }
-
-    if (answerInput) {
-
-        answerInput.value = "";
-
-        answerInput.disabled =
-            false;
-
-        setTimeout(() => {
-
-            if (
-                gameRunning &&
-                answerInput
-            ) {
-                answerInput.focus();
-            }
-
-        }, 30);
-    }
-
-    if (submitBtn) {
-        submitBtn.disabled = false;
-    }
-
-    if (feedback) {
-
-        feedback.textContent = "";
-
-        feedback.className =
-            "feedback";
-    }
-
-    updateStats();
-}
-
-
-/* =========================================================
-   CÂU HỎI TIẾP THEO
-   ========================================================= */
-
-function nextQuestion() {
+function showQuestion() {
 
     if (!gameRunning) {
         return;
     }
 
+    clearFeedback();
 
-    /* -----------------------------------------
-       CHẾ ĐỘ TỪ SAI:
-       hết danh sách thì dừng
-       ----------------------------------------- */
+    /*
+       Nếu hết câu:
 
-    if (
-        questionPool.length === 0 &&
-        gameMode === "wrong"
-    ) {
+       Normal:
+       → trộn lại toàn bộ danh sách
+       
+       Wrong:
+       → hoàn thành ôn từ sai
+    */
 
-        finishWrongReview();
+    if (questionPool.length === 0) {
 
-        return;
-    }
+        if (gameMode === "wrong") {
 
+            finishWrongReview();
 
-    /* -----------------------------------------
-       CHẾ ĐỘ THƯỜNG:
-       hết thì xáo trộn lại
-       => chuỗi vô hạn
-       ----------------------------------------- */
-
-    if (
-        questionPool.length === 0 &&
-        gameMode === "normal"
-    ) {
+            return;
+        }
 
         questionPool =
             shuffle(vocabulary);
     }
 
 
-    if (questionPool.length > 0) {
+    currentQuestion =
+        questionPool.pop();
 
-        const question =
-            questionPool.pop();
 
-        showQuestion(question);
+    /*
+       HIỂN THỊ SỐ THỨ TỰ
 
-    } else {
+       Ví dụ:
 
-        finishWrongReview();
+       63. Vui vẻ
+    */
+
+    if (promptEl) {
+
+        promptEl.textContent =
+            `${currentQuestion.id}. ${currentQuestion.vi}`;
     }
+
+
+    if (answerEl) {
+
+        answerEl.value = "";
+
+        answerEl.disabled = false;
+
+        answerEl.focus();
+    }
+
+
+    if (submitBtn) {
+
+        submitBtn.disabled = false;
+    }
+
+
+    updateStats();
 }
 
 
 /* =========================================================
-   KIỂM TRA ĐÁP ÁN
+   KIỂM TRA CÂU TRẢ LỜI
    ========================================================= */
 
 function checkAnswer() {
@@ -2069,10 +1752,12 @@ function checkAnswer() {
         return;
     }
 
+    checkingAnswer = true;
+
 
     const rawAnswer =
-        answerInput
-            ? answerInput.value
+        answerEl
+            ? answerEl.value
             : "";
 
 
@@ -2080,127 +1765,131 @@ function checkAnswer() {
         parseAnswers(rawAnswer);
 
 
-    /* -----------------------------------------
-       KHÔNG NHẬP
-       ----------------------------------------- */
-
-    if (userAnswers.length === 0) {
-
-        if (feedback) {
-
-            feedback.textContent =
-                "⚠️ Hãy nhập đáp án.";
-
-            feedback.className =
-                "feedback wrong";
-        }
-
-        if (answerInput) {
-            answerInput.focus();
-        }
-
-        return;
-    }
+    const correctAnswers =
+        currentQuestion.en;
 
 
-    checkingAnswer = true;
+    /*
+       Debug trong F12 → Console
+    */
+
+    console.log(
+        "================================"
+    );
+
+    console.log(
+        "Số:",
+        currentQuestion.id
+    );
+
+    console.log(
+        "Tiếng Việt:",
+        currentQuestion.vi
+    );
+
+    console.log(
+        "Bạn nhập:",
+        userAnswers
+    );
+
+    console.log(
+        "Đáp án:",
+        correctAnswers
+    );
 
 
     const isCorrect =
         answersAreEqual(
             userAnswers,
-            currentQuestion.en
+            correctAnswers
         );
 
-
-    /* =====================================================
-       ĐÚNG
-       ===================================================== */
 
     if (isCorrect) {
 
-        streak++;
+        handleCorrect();
 
-        correct++;
+    } else {
 
-
-        // Nếu từng sai thì xóa khỏi danh sách
-        removeWrongWord(
-            currentQuestion
-        );
-
-
-        if (feedback) {
-
-            feedback.textContent =
-                "✓ Chính xác!";
-
-            feedback.className =
-                "feedback correct";
-        }
-
-
-        if (answerInput) {
-            answerInput.disabled = true;
-        }
-
-        if (submitBtn) {
-            submitBtn.disabled = true;
-        }
-
-
-        updateStats();
-
-
-        setTimeout(() => {
-
-            checkingAnswer = false;
-
-            if (!gameRunning) {
-                return;
-            }
-
-            nextQuestion();
-
-        }, 450);
-
-
-        return;
-    }
-
-
-    /* =====================================================
-       SAI
-       ===================================================== */
-
-    addWrongWord(
-        currentQuestion,
-        rawAnswer
-    );
-
-
-    if (feedback) {
-
-        feedback.textContent =
-            "✗ Sai! Chuỗi đã kết thúc.";
-
-        feedback.className =
-            "feedback wrong";
-    }
-
-
-    if (answerInput) {
-        answerInput.disabled = true;
-    }
-
-    if (submitBtn) {
-        submitBtn.disabled = true;
+        handleWrong(userAnswers);
     }
 
 
     checkingAnswer = false;
+}
 
-    endGame();
+
+/* =========================================================
+   ĐÚNG
+   ========================================================= */
+
+function handleCorrect() {
+
+    streak++;
+    correct++;
+
+    removeWrongWord(
+        currentQuestion
+    );
+
+    showFeedback(
+        "✓ Chính xác!",
+        "correct"
+    );
+
+    updateStats();
+
+
+    setTimeout(() => {
+
+        if (!gameRunning) {
+            return;
+        }
+
+        showQuestion();
+
+    }, 350);
+}
+
+
+/* =========================================================
+   SAI
+   ========================================================= */
+
+function handleWrong(userAnswers) {
+
+    addWrongWord(
+        currentQuestion
+    );
+
+    gameRunning = false;
+
+
+    if (answerEl) {
+
+        answerEl.disabled = true;
+    }
+
+
+    if (submitBtn) {
+
+        submitBtn.disabled = true;
+    }
+
+
+    showFeedback(
+        "✗ Sai!",
+        "wrong"
+    );
+
+
+    setTimeout(() => {
+
+        showGameOver(
+            userAnswers
+        );
+
+    }, 500);
 }
 
 
@@ -2208,59 +1897,41 @@ function checkAnswer() {
    GAME OVER
    ========================================================= */
 
-function endGame() {
-
-    gameRunning = false;
-
-    checkingAnswer = false;
-
+function showGameOver(userAnswers) {
 
     if (gameCard) {
-        gameCard.classList.add("hidden");
+
+        gameCard.classList.add(
+            "hidden"
+        );
     }
+
 
     if (gameOver) {
-        gameOver.classList.remove("hidden");
+
+        gameOver.classList.remove(
+            "hidden"
+        );
     }
 
 
-    if (finalStreak) {
-        finalStreak.textContent =
+    if (finalStreakEl) {
+
+        finalStreakEl.textContent =
             streak;
     }
 
 
-    if (
-        overText &&
-        currentQuestion
-    ) {
+    if (overTextEl) {
 
         const correctText =
             currentQuestion.en.join(
                 " = "
             );
 
-        const userText =
-            answerInput
-                ? answerInput.value.trim()
-                : "";
 
-
-        overText.innerHTML = `
-
-            <div>
-                <strong>Bạn trả lời:</strong><br>
-                ${escapeHTML(
-                    userText || "(bỏ trống)"
-                )}
-            </div>
-
-            <div style="margin-top:12px;">
-                <strong>Đáp án đúng:</strong><br>
-                ${escapeHTML(correctText)}
-            </div>
-
-        `;
+        overTextEl.innerHTML =
+            `Đáp án đúng: <strong>${escapeHTML(correctText)}</strong>`;
     }
 
 
@@ -2269,46 +1940,41 @@ function endGame() {
 
 
 /* =========================================================
-   KẾT THÚC ÔN TỪ SAI
+   HOÀN THÀNH ÔN TỪ SAI
    ========================================================= */
 
 function finishWrongReview() {
 
     gameRunning = false;
 
-    checkingAnswer = false;
-
-    currentQuestion = null;
-
 
     if (gameCard) {
-        gameCard.classList.add("hidden");
+
+        gameCard.classList.add(
+            "hidden"
+        );
     }
+
 
     if (gameOver) {
-        gameOver.classList.remove("hidden");
+
+        gameOver.classList.remove(
+            "hidden"
+        );
     }
 
 
-    if (finalStreak) {
-        finalStreak.textContent =
+    if (finalStreakEl) {
+
+        finalStreakEl.textContent =
             streak;
     }
 
 
-    if (overText) {
+    if (overTextEl) {
 
-        if (wrongWords.length === 0) {
-
-            overText.innerHTML =
-                "🎉 Tuyệt vời! Bạn đã xử lý hết tất cả từ sai.";
-
-        } else {
-
-            overText.innerHTML =
-                `✓ Đã làm lại xong lượt này.<br>
-                 Hiện còn <strong>${wrongWords.length}</strong> từ sai.`;
-        }
+        overTextEl.textContent =
+            "🎉 Bạn đã hoàn thành toàn bộ danh sách từ sai!";
     }
 
 
@@ -2317,201 +1983,95 @@ function finishWrongReview() {
 
 
 /* =========================================================
-   BẮT ĐẦU GAME
+   ESCAPE HTML
    ========================================================= */
 
-function startGame(
-    words = vocabulary,
-    mode = "normal"
-) {
+function escapeHTML(text) {
 
-    if (
-        !Array.isArray(words) ||
-        words.length === 0
-    ) {
-
-        alert(
-            "Không có từ vựng để chơi!"
+    return String(text)
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
         );
+}
 
-        return;
-    }
 
+/* =========================================================
+   GAME BÌNH THƯỜNG
+   ========================================================= */
+
+function startNormalGame() {
+
+    gameMode = "normal";
 
     streak = 0;
-
     correct = 0;
 
     checkingAnswer = false;
 
     gameRunning = true;
 
-    currentQuestion = null;
-
-    gameMode = mode;
-
-
     questionPool =
-        shuffle(words);
-
+        shuffle(vocabulary);
 
     gameTotal =
-        questionPool.length;
+        vocabulary.length;
+
+
+    if (gameOver) {
+
+        gameOver.classList.add(
+            "hidden"
+        );
+    }
+
+
+    if (wrongPanel) {
+
+        wrongPanel.classList.add(
+            "hidden"
+        );
+    }
 
 
     if (gameCard) {
-        gameCard.classList.remove("hidden");
-    }
 
-    if (gameOver) {
-        gameOver.classList.add("hidden");
-    }
-
-
-    if (feedback) {
-
-        feedback.textContent = "";
-
-        feedback.className =
-            "feedback";
+        gameCard.classList.remove(
+            "hidden"
+        );
     }
 
 
     updateStats();
 
-    nextQuestion();
+    showQuestion();
 }
 
 
 /* =========================================================
-   CHƠI LẠI TOÀN BỘ
+   ÔN TỪ SAI
    ========================================================= */
 
-function restartGame() {
+function startWrongReview() {
 
-    startGame(
-        vocabulary,
-        "normal"
-    );
-}
+    loadWrongWords();
 
-
-/* =========================================================
-   HIỂN THỊ TỪ SAI
-   ========================================================= */
-
-function renderWrongWords() {
-
-    if (!wrongList) {
-        return;
-    }
-
-
-    if (wrongWords.length === 0) {
-
-        wrongList.innerHTML = `
-
-            <div class="empty-wrong">
-                🎉 Không có từ sai!
-            </div>
-
-        `;
-
-        if (retryWrongBtn) {
-            retryWrongBtn.disabled = true;
-        }
-
-        updateStats();
-
-        return;
-    }
-
-
-    if (retryWrongBtn) {
-        retryWrongBtn.disabled = false;
-    }
-
-
-    wrongList.innerHTML =
-        wrongWords
-            .map((item, index) => {
-
-                const answers =
-                    item.en.join(" = ");
-
-                const attempts =
-                    Number(
-                        item.attempts || 1
-                    );
-
-
-                return `
-
-                    <div class="wrong-item">
-
-                        <div class="wrong-number">
-                            ${index + 1}
-                        </div>
-
-                        <div class="wrong-content">
-
-                            <div class="wrong-vi">
-                                ${escapeHTML(item.vi)}
-                            </div>
-
-                            <div class="wrong-en">
-                                ${escapeHTML(answers)}
-                            </div>
-
-                            <div class="wrong-attempts">
-                                Sai ${attempts} lần
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                `;
-
-            })
-            .join("");
-
-
-    updateStats();
-}
-
-
-/* =========================================================
-   MỞ DANH SÁCH TỪ SAI
-   ========================================================= */
-
-function openWrongPanel() {
-
-    renderWrongWords();
-
-    if (wrongPanel) {
-        wrongPanel.classList.remove("hidden");
-    }
-}
-
-
-/* =========================================================
-   ĐÓNG DANH SÁCH TỪ SAI
-   ========================================================= */
-
-function closeWrongPanel() {
-
-    if (wrongPanel) {
-        wrongPanel.classList.add("hidden");
-    }
-}
-
-
-/* =========================================================
-   LÀM LẠI TẤT CẢ TỪ SAI
-   ========================================================= */
-
-function retryWrongWords() {
 
     if (wrongWords.length === 0) {
 
@@ -2523,65 +2083,202 @@ function retryWrongWords() {
     }
 
 
-    /*
-       Tạo bản sao.
+    gameMode = "wrong";
 
-       Ví dụ hiện có:
-       10 từ sai
+    streak = 0;
+    correct = 0;
 
-       => chỉ chơi 10 từ đó.
-       Không nhảy sang vocabulary.
-    */
+    checkingAnswer = false;
 
-    const wordsToReview =
-        wrongWords.map(item => ({
-
-            vi: item.vi,
-
-            en: [...item.en]
-
-        }));
+    gameRunning = true;
 
 
-    closeWrongPanel();
+    questionPool =
+        shuffle(wrongWords);
 
 
-    startGame(
-        wordsToReview,
-        "wrong"
-    );
+    gameTotal =
+        questionPool.length;
+
+
+    if (gameOver) {
+
+        gameOver.classList.add(
+            "hidden"
+        );
+    }
+
+
+    if (wrongPanel) {
+
+        wrongPanel.classList.add(
+            "hidden"
+        );
+    }
+
+
+    if (gameCard) {
+
+        gameCard.classList.remove(
+            "hidden"
+        );
+    }
+
+
+    updateStats();
+
+    showQuestion();
 }
 
 
 /* =========================================================
-   NÚT CHƠI LẠI SAU GAME OVER
+   CHƠI LẠI
    ========================================================= */
 
-function playAgain() {
+function restartGame() {
 
-    startGame(
-        vocabulary,
-        "normal"
-    );
+    startNormalGame();
 }
 
 
 /* =========================================================
-   NÚT ÔN TỪ SAI SAU GAME OVER
+   HIỂN THỊ DANH SÁCH TỪ SAI
    ========================================================= */
 
-function reviewWrongWords() {
+function renderWrongWords() {
+
+    if (!wrongListEl) {
+        return;
+    }
+
+
+    wrongListEl.innerHTML = "";
+
 
     if (wrongWords.length === 0) {
 
-        alert(
-            "Không còn từ sai!"
+        const empty =
+            document.createElement(
+                "div"
+            );
+
+        empty.className =
+            "wrong-empty";
+
+        empty.textContent =
+            "🎉 Bạn chưa có từ sai nào.";
+
+        wrongListEl.appendChild(
+            empty
         );
 
         return;
     }
 
-    retryWrongWords();
+
+    wrongWords.forEach(
+        (word, index) => {
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+            item.className =
+                "wrong-item";
+
+
+            const number =
+                document.createElement(
+                    "div"
+                );
+
+            number.className =
+                "wrong-number";
+
+            number.textContent =
+                word.id;
+
+
+            const content =
+                document.createElement(
+                    "div"
+                );
+
+            content.className =
+                "wrong-content";
+
+
+            const vi =
+                document.createElement(
+                    "div"
+                );
+
+            vi.className =
+                "wrong-vi";
+
+            vi.textContent =
+                `${word.id}. ${word.vi}`;
+
+
+            const en =
+                document.createElement(
+                    "div"
+                );
+
+            en.className =
+                "wrong-en";
+
+            en.textContent =
+                word.en.join(
+                    " = "
+                );
+
+
+            content.appendChild(vi);
+            content.appendChild(en);
+
+            item.appendChild(number);
+            item.appendChild(content);
+
+            wrongListEl.appendChild(item);
+        }
+    );
+}
+
+
+/* =========================================================
+   MỞ PANEL TỪ SAI
+   ========================================================= */
+
+function openWrongPanel() {
+
+    loadWrongWords();
+
+    renderWrongWords();
+
+
+    if (wrongPanel) {
+
+        wrongPanel.classList.remove(
+            "hidden"
+        );
+    }
+}
+
+
+/* =========================================================
+   ĐÓNG PANEL TỪ SAI
+   ========================================================= */
+
+function closeWrongPanel() {
+
+    if (wrongPanel) {
+
+        wrongPanel.classList.add(
+            "hidden"
+        );
+    }
 }
 
 
@@ -2589,19 +2286,20 @@ function reviewWrongWords() {
    ENTER
    ========================================================= */
 
-function handleAnswerKeydown(event) {
+function handleEnter(event) {
 
-    if (event.key === "Enter") {
-
-        event.preventDefault();
-
-        checkAnswer();
+    if (event.key !== "Enter") {
+        return;
     }
+
+    event.preventDefault();
+
+    checkAnswer();
 }
 
 
 /* =========================================================
-   GÁN SỰ KIỆN
+   EVENTS
    ========================================================= */
 
 function setupEvents() {
@@ -2615,11 +2313,11 @@ function setupEvents() {
     }
 
 
-    if (answerInput) {
+    if (answerEl) {
 
-        answerInput.addEventListener(
+        answerEl.addEventListener(
             "keydown",
-            handleAnswerKeydown
+            handleEnter
         );
     }
 
@@ -2629,6 +2327,24 @@ function setupEvents() {
         restartBtn.addEventListener(
             "click",
             restartGame
+        );
+    }
+
+
+    if (againBtn) {
+
+        againBtn.addEventListener(
+            "click",
+            restartGame
+        );
+    }
+
+
+    if (reviewBtn) {
+
+        reviewBtn.addEventListener(
+            "click",
+            startWrongReview
         );
     }
 
@@ -2655,129 +2371,19 @@ function setupEvents() {
 
         retryWrongBtn.addEventListener(
             "click",
-            retryWrongWords
-        );
-    }
-
-
-    if (againBtn) {
-
-        againBtn.addEventListener(
-            "click",
-            playAgain
-        );
-    }
-
-
-    if (reviewBtn) {
-
-        reviewBtn.addEventListener(
-            "click",
-            reviewWrongWords
-        );
-    }
-
-
-    if (wrongPanel) {
-
-        wrongPanel.addEventListener(
-            "click",
-            function(event) {
-
-                if (
-                    event.target ===
-                    wrongPanel
-                ) {
-
-                    closeWrongPanel();
-                }
-            }
+            startWrongReview
         );
     }
 }
 
 
 /* =========================================================
-   KIỂM TRA DỮ LIỆU
-   ========================================================= */
-
-function validateVocabulary() {
-
-    if (!Array.isArray(vocabulary)) {
-
-        console.error(
-            "vocabulary không phải array."
-        );
-
-        return false;
-    }
-
-
-    if (vocabulary.length === 0) {
-
-        console.error(
-            "Danh sách vocabulary đang rỗng."
-        );
-
-        return false;
-    }
-
-
-    let valid = true;
-
-
-    vocabulary.forEach(
-        (item, index) => {
-
-            if (
-                !item ||
-                typeof item.vi !== "string" ||
-                item.vi.trim() === ""
-            ) {
-
-                console.error(
-                    `Từ ${index + 1} thiếu nghĩa tiếng Việt.`
-                );
-
-                valid = false;
-            }
-
-
-            if (
-                !item ||
-                !Array.isArray(item.en) ||
-                item.en.length === 0
-            ) {
-
-                console.error(
-                    `Từ ${index + 1} thiếu đáp án tiếng Anh.`
-                );
-
-                valid = false;
-            }
-
-        }
-    );
-
-
-    return valid;
-}
-
-
-/* =========================================================
-   KHỞI ĐỘNG
+   KHỞI TẠO
    ========================================================= */
 
 function initialize() {
 
-    if (!validateVocabulary()) {
-        return;
-    }
-
-
-    wrongWords =
-        loadWrongWords();
-
+    loadWrongWords();
 
     setupEvents();
 
@@ -2785,52 +2391,15 @@ function initialize() {
 
     updateStats();
 
-
-    startGame(
-        vocabulary,
-        "normal"
-    );
-
-
-    console.log(
-        "================================="
-    );
-
-    console.log(
-        "VOCAB STREAK đã khởi động!"
-    );
-
-    console.log(
-        "Tổng số từ:",
-        vocabulary.length
-    );
-
-    console.log(
-        "Số từ sai:",
-        wrongWords.length
-    );
-
-    console.log(
-        "================================="
-    );
+    startNormalGame();
 }
 
 
 /* =========================================================
-   CHẠY
+   START
    ========================================================= */
 
-if (
-    document.readyState ===
-    "loading"
-) {
-
-    document.addEventListener(
-        "DOMContentLoaded",
-        initialize
-    );
-
-} else {
-
-    initialize();
-}
+document.addEventListener(
+    "DOMContentLoaded",
+    initialize
+);
